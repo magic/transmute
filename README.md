@@ -85,7 +85,7 @@ console.log(magic)
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
 [npm-url]: https://www.npmjs.com/package/@magic/transmute
-[travis-image]: https://api.travis-ci.com/magic/transmute.svg?branch=master
+[travis-image]: https://img.shields.io/travis/com/magic/transmute/master
 [travis-url]: https://travis-ci.com/magic/transmute
 [appveyor-image]: https://img.shields.io/appveyor/ci/magic/transmute/master.svg
 [appveyor-url]: https://ci.appveyor.com/project/magic/transmute/branch/master
