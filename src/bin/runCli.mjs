@@ -31,13 +31,12 @@ export const runCli = (html, isMarkdown, res) => {
   if (res.argv['--output']) {
     const outputFile = res.argv['--output'].join('')
     const dir = path.dirname(outputFile)
-    console.log('write to output file', outputFile, dir)
     if (!fs.existsSync(dir)) {
       log.info('output dir does not exist, creating it.', dir)
       mkdirp(dir)
     }
 
-    log.info('writing:', outputFile);
+    log.info('writing to:', { outputFile });
     fs.writeFileSync(outputFile, out)
   } else {
     console.log(out)
