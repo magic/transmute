@@ -1,0 +1,52 @@
+{
+  "name": "@magic/transmute",
+  "version": "0.0.1",
+  "author": "Wizards & Witches",
+  "homepage": "https://magic.github.io/transmute",
+  "license": "AGPL-3.0",
+  "description": "convert markdown and html to magic function strings.",
+  "main": "src/bin/bin.js",
+  "engines": {
+    "node": ">=12.13.0"
+  },
+  "bin": {
+    "magic-transmute": "src/bin/bin.js"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magic/transmute.git"
+  },
+  "bugs": {
+    "url": "https://github.com/magic/transmute/issues"
+  },
+  "scripts": {
+    "start": "t",
+    "test": "t",
+    "format": "f -w"
+  },
+  "devDependencies": {
+    "@magic/test": "0.1.21",
+    "@magic/types": "0.1.2"
+  },
+  "dependencies": {
+    "@magic/cli": "0.0.8",
+    "@magic/log": "0.1.1",
+    "marked": "0.7.0",
+    "parse5": "5.1.1"
+  },
+  "keywords": [
+    "magic",
+    "transmute",
+    "html",
+    "markdown"
+  ],
+  "contributors": [
+    {
+      "name": "jascha ehrenreich",
+      "github": "jaeh"
+    }
+  ]
+}
