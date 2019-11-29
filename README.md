@@ -48,7 +48,7 @@ npm i --save @magic/transmute
 `magic-transmute html --str '<a href="https://magic.github.io">magic!</a>'`
 
 ##### transpile markdown string:
-`magic-transmute markdown --str '[magic!](https://magic.github.io)'',`
+`magic-transmute markdown --str '[magic!](https://magic.github.io)'`
 
 ##### html file:
 `magic-transmute file --input input.html --output output.mjs`
