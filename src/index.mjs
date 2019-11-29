@@ -10,8 +10,8 @@ import prettier from 'prettier'
 
 const escape = str => str.replace(/'/g, "\\'")
 
-export const markdown = mark => {
-  const md = marked(mark)
+export const markdown = input => {
+  const md = marked(input)
   return html(md)
 }
 
@@ -82,7 +82,10 @@ const stringifyAst = ast => {
     .join(',\n')
 }
 
+export const md = markdown
+
 export default {
   html,
   markdown,
+  md,
 }
