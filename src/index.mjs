@@ -8,7 +8,11 @@ import marked from 'marked'
 import parse5 from 'parse5'
 import prettier from 'prettier'
 
-const escape = str => str.replace(/'/g, "\\'")
+const escape = str =>
+  str
+    .replace(/'/g, "\\'")
+    .replace(/`/g, '\\`')
+    .replace(/"/g, '\\"')
 
 export const markdown = input => {
   const md = marked(input)
@@ -28,8 +32,26 @@ const stringifyAst = ast => {
   }
 
   const stringified = ast.childNodes.map(node => {
+    let { value } = node
+
     if (node.nodeName === '#text') {
-      return node.value.trim() ? `'${escape(node.value)}'` : ''
+      let delimiter = "'"
+
+      if (value.includes('\n')) {
+        delimiter = '`'
+      } else if (value.includes('"') && !value.includes("'")) {
+        delimiter = "'"
+      } else if (value.includes("'") && !value.includes('"')) {
+        delimiter = '"'
+      } else if (value.includes('"') && value.includes("'")) {
+        if (!value.includes('`')) {
+          delimiter = '`'
+        } else {
+          value = escape(value)
+        }
+      }
+
+      return node.value.trim() ? `${delimiter}${value}${delimiter}` : ''
     }
 
     let out = ''
