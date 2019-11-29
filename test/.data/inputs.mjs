@@ -50,7 +50,7 @@ export const codeNoLang = {
   magic: "pre(code('code block'))",
 }
 
-export const paragraph = {
+export const p = {
   md: 'paragraph',
   html: '<p>paragraph</p>',
   magic: "p('paragraph')",
@@ -59,7 +59,7 @@ export const paragraph = {
 export const sentence = {
   md: "It's very easy to make some words **bold** and other words *italic* with Markdown. You can even [link!](http://example.com)",
   html: "<p>It's very easy to make some words <strong>bold</strong> and other words <em>italic</em> with Markdown. You can even <a href=\"http://example.com\">link!</a>",
-  magic: `p(['It\\'s very easy to make some words ',
+  magic: `p(["It's very easy to make some words ",
 strong('bold'),
 ' and other words ',
 em('italic'),
