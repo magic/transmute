@@ -1,10 +1,3 @@
-export const state = {
-  description: [
-    '@magic/transmute documentation.',
-    'convert html and markdown to magic functional templates.',
-  ],
-}
-
 export const View = state => [
   h1({ id: 'magictransmute' }, `@magic/transmute`),
   div([
