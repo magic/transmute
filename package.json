@@ -26,9 +26,17 @@
     "start": "t",
     "test": "t",
     "format": "f -w",
+    "build": "NODE_ENV=production magic build",
+    "prod": "NODE_ENV=production magic build serve",
+    "dev": "magic dev",
     "dirty-cli-test": "src/bin/bin.js file --input test/.data/testing.md --output testing.mjs && echo 'contents: ' && cat testing.mjs && echo 'deleting testing.mjs' && rm testing.mjs"
   },
   "devDependencies": {
+    "@magic-modules/git-badges": "github:magic-modules/git-badges",
+    "@magic-modules/light-switch": "github:magic-modules/light-switch",
+    "@magic-modules/pre": "github:magic-modules/pre",
+    "@magic-themes/docs": "github:magic-themes/docs",
+    "@magic/core": "github:magic/core",
     "@magic/test": "0.1.21",
     "@magic/types": "0.1.2"
   },
