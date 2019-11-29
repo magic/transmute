@@ -1,4 +1,13 @@
 ## @magic/transmute
+transmutes html and markdown to @magic view fragments
+
+[![NPM version][npm-image]][npm-url]
+[![Linux Build Status][travis-image]][travis-url]
+[![Windows Build Status][appveyor-image]][appveyor-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
+[![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
+[![Known Vulnerabilities][snyk-image]][snyk-url]
+
 
 ### installation
 
@@ -73,3 +82,17 @@ console.log(magic)
 
 // that's it.
 ```
+
+[npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
+[npm-url]: https://www.npmjs.com/package/@magic/transmute
+[travis-image]: https://api.travis-ci.com/magic/transmute.svg?branch=master
+[travis-url]: https://travis-ci.com/magic/transmute
+[appveyor-image]: https://img.shields.io/appveyor/ci/magic/transmute/master.svg
+[appveyor-url]: https://ci.appveyor.com/project/magic/transmute/branch/master
+[coveralls-image]: https://coveralls.io/repos/github/magic/transmute/badge.svg
+[coveralls-url]: https://coveralls.io/github/magic/transmute
+[greenkeeper-image]: https://badges.greenkeeper.io/magic/transmute.svg
+[greenkeeper-url]: https://badges.greenkeeper.io/magic/transmute.svg
+[snyk-image]: https://snyk.io/test/github/magic/transmute/badge.svg
+[snyk-url]: https://snyk.io/test/github/magic/transmute
+
