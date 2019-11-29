@@ -39,6 +39,7 @@ const stringifyAst = ast => {
 
       if (value.includes('\n')) {
         delimiter = '`'
+        value = value.replace(/`/g, '\\`');
       } else if (value.includes('"') && !value.includes("'")) {
         delimiter = "'"
       } else if (value.includes("'") && !value.includes('"')) {
@@ -51,7 +52,11 @@ const stringifyAst = ast => {
         }
       }
 
-      return node.value.trim() ? `${delimiter}${value}${delimiter}` : ''
+      if (!value.trim()) {
+        return ''
+      }
+
+      return `${delimiter}${value}${delimiter}`
     }
 
     let out = ''
