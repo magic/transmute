@@ -11,8 +11,8 @@ const args = {
     ['--input', '--in', '-i'],
     ['--output', '--out', '-o'],
     ['--addWrapper', '--add-wrapper'],
-    ['--addView', '--add-view'],
     ['--noPretty', '--no-pretty'],
+    ['--markdown', '--mark', '-m'],
   ],
   commands: [
     'markdown',
@@ -27,10 +27,15 @@ const args = {
       markdown: 'convert markdown to magic functions',
       file: 'convert file to magic functions',
     },
-    flags: {
-      output: 'output file to write to',
-      addWrapper: 'add export default[] or export default state => [] to the returned string.',
-      noPretty: 'do not run prettier.',
+    options: {
+      '--output': 'output file to write to',
+      '--add-wrapper': 'add export default[] to the returned string.',
+      '--no-pretty': 'do not run prettier.',
+      '--markdown': 'force markdown parser to run.',
+      '--input': 'input file path',
+      '--output': 'output file path',
+      '--help': 'this help text',
+      '--str': 'an input string of either html or markdown, depending on running command',
     },
     example: `
 transpile html string:
@@ -39,8 +44,14 @@ magic-transmute html --str '<a href="https://example.com">a link</a>'
 transpile markdown string:
 magic-transmute markdown --str '[a link](https://example.com)'',
 
-transpile file:
+transpile html file:
 magic-transmute file --input input.html --output output.mjs
+
+transpile markdown file (.markdown and .md get recogniced):
+magic-transmute file --input input.md --output output.mjs
+
+transpile file as markdown (arbitrary file extensions)
+magic-transmute file --input input.txt --output output.mjs --markdown
 `,
   },
 }
