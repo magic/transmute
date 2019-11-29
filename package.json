@@ -29,7 +29,8 @@
     "build": "NODE_ENV=production magic build",
     "prod": "NODE_ENV=production magic build serve",
     "dev": "magic dev",
-    "dirty-cli-test": "src/bin/bin.js file --input test/.data/testing.md --output testing.mjs && echo 'contents: ' && cat testing.mjs && echo 'deleting testing.mjs' && rm testing.mjs"
+    "dirty-cli-test": "src/bin/bin.js file --input test/.data/testing.md --output testing.mjs && echo 'contents: ' && cat testing.mjs && echo 'deleting testing.mjs' && rm testing.mjs",
+    "calls": "calls"
   },
   "devDependencies": {
     "@magic-modules/git-badges": "github:magic-modules/git-badges",
