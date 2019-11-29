@@ -36,7 +36,7 @@ export const handleArgv = ({ cmds, argv }) => {
       isMarkdown = true
     }
 
-    html = argv['--str'].join('').trim()
+    html = argv['--str'].join(' ').trim()
   }
 
   if (!html) {
