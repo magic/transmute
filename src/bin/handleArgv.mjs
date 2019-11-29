@@ -1,6 +1,8 @@
 import fs from 'fs'
 import path from 'path'
 
+import log from '@magic/log'
+
 export const handleArgv = ({ cmds, argv }) => {
   if (!argv['--input'] && !argv['--str']) {
     log.error('Input required', 'specify either --str or --input')
