@@ -5,14 +5,14 @@ import prettier from 'prettier'
 
 import log from '@magic/log'
 
-import { convertMarkdown, convertHtml } from '../index.mjs'
+import transmute from '../index.mjs'
 
 export const runCli = (html, isMarkdown, res) => {
   let out
   if (isMarkdown) {
-    out = convertMarkdown(html)
+    out = transmute.markdown(html)
   } else {
-    out = convertHtml(html)
+    out = transmute.html(html)
   }
 
   if (res.argv['--addWrapper']) {

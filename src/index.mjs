@@ -10,13 +10,13 @@ import prettier from 'prettier'
 
 const escape = str => str.replace(/'/g, "\\'")
 
-export const convertMarkdown = mark => {
-  const html = marked(mark)
-  return convertHtml(html)
+export const markdown = mark => {
+  const md = marked(mark)
+  return html(md)
 }
 
-export const convertHtml = html => {
-  const ast = parse5.parseFragment(html)
+export const html = input => {
+  const ast = parse5.parseFragment(input)
   const out = stringifyAst(ast)
 
   return out
@@ -80,4 +80,9 @@ const stringifyAst = ast => {
     .filter(a => a)
     .map(a => a.trim())
     .join(',\n')
+}
+
+export default {
+  html,
+  markdown,
 }
