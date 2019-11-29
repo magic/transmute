@@ -14,8 +14,8 @@ export const handleArgv = ({ cmds, argv }) => {
 
   if (cmds.file) {
     if (!argv['--input']) {
-      log.error('--input file required.');
-      process.exit();
+      log.error('--input file required.')
+      process.exit()
     }
 
     const file = argv['--input'][0]

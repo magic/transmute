@@ -36,7 +36,7 @@ export const runCli = (html, isMarkdown, res) => {
       mkdirp(dir)
     }
 
-    log.info('writing to:', { outputFile });
+    log.info('writing to:', { outputFile })
     fs.writeFileSync(outputFile, out)
   } else {
     console.log(out)

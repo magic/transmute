@@ -1,4 +1,3 @@
-
 import { cli } from '@magic/cli/src/index.mjs'
 
 import { handleArgv } from './handleArgv.mjs'
@@ -14,11 +13,7 @@ const args = {
     ['--noPretty', '--no-pretty'],
     ['--markdown', '--mark', '-m'],
   ],
-  commands: [
-    'markdown',
-    'html',
-    'file',
-  ],
+  commands: ['markdown', 'html', 'file'],
   help: {
     name: '@magic/transmute',
     header: 'generates magic functions from html and markdown',
