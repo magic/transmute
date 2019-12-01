@@ -87,3 +87,13 @@ li(['listitem 2',
 ul([li('listitem 2 subitem 1'),
 li('listitem 2 subitem 2')])])])`
 }
+
+export const ulSingle = {
+  md: '* test',
+  html: '<ul><li>test</li></ul>',
+  magic: `ul(li('test'))`,
+}
+
+export const img = {
+  md: '[/logo.png]',
+}

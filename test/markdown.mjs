@@ -15,6 +15,7 @@ import {
   italic,
   sentence,
   ul,
+  ulSingle,
 } from './.data/inputs.mjs'
 
 export default [
@@ -48,4 +49,5 @@ export default [
   { fn: md(italic.md), expect: italic.magic, info: 'can handle italics' },
   { fn: md(sentence.md), expect: sentence.magic, info: 'can handle sentences' },
   { fn: md(ul.md), expect: ul.magic, info: 'can handle ul lists' },
+  { fn: md(ulSingle.md), expect: ulSingle.magic, info: 'can handle ul lists' },
 ]
