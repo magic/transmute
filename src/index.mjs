@@ -92,15 +92,12 @@ const stringifyAst = ast => {
       }
     }
 
-    if (node.tagName) {
-      if (node.tagName === 'a') {
-        node.tagName = 'Link'
-        out = out.replace('href:', 'to:')
-      }
-      return `${node.tagName}(${out})`
-    } else if (out) {
-      return out
+    if (node.tagName === 'a') {
+      node.tagName = 'Link'
+      out = out.replace('href:', 'to:')
     }
+
+    return `${node.tagName}(${out})`
   })
 
   return stringified
