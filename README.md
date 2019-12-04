@@ -83,6 +83,15 @@ console.log(magic)
 // that's it.
 ```
 
+#### changelog
+
+##### 0.0.1
+first release
+
+##### 0.0.2
+update dependencies
+fix cli
+
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
 [npm-url]: https://www.npmjs.com/package/@magic/transmute
 [travis-image]: https://img.shields.io/travis/com/magic/transmute/master
