@@ -39,7 +39,7 @@ const stringifyAst = ast => {
 
       if (value.includes('\n')) {
         delimiter = '`'
-        value = value.replace(/`/g, '\\`');
+        value = value.replace(/`/g, '\\`')
       } else if (value.includes('"') && !value.includes("'")) {
         delimiter = "'"
       } else if (value.includes("'") && !value.includes('"')) {
