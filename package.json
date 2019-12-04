@@ -7,7 +7,6 @@
   "description": "convert markdown and html to magic function strings.",
   "module": "src/index.mjs",
   "main": "src/index.mjs",
-  "type": "module",
   "engines": {
     "node": ">=12.13.0"
   },
