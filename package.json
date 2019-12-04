@@ -44,8 +44,8 @@
     "@magic/types": "0.1.2"
   },
   "dependencies": {
-    "@magic/cli": "0.0.8",
-    "@magic/log": "0.1.1",
+    "@magic/cli": "0.0.10",
+    "@magic/log": "0.1.2",
     "marked": "0.7.0",
     "parse5": "5.1.1"
   },
