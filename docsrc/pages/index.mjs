@@ -76,17 +76,6 @@ console.log(magic)
 
 // that's it.
 `),
-
-    h3({ id: 'changelog' }, 'changelog'),
-
-    h4({ id: 'changelog-0.0.1' }, '0.0.1'),
-    p('first release'),
-
-    h4({ id: 'changelog-0.0.2' }, '0.0.2'),
-    p('update dependencies'),
-
-    h4({ id: 'changelog-0.0.3' }, '0.0.3'),
-    p('fix cli'),
   ]),
 
   LightSwitch(state),

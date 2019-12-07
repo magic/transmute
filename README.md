@@ -94,6 +94,9 @@ update dependencies
 ##### 0.0.3
 fix cli
 
+##### 0.0.4
+update @magic dependencies to use npm packages instead of github
+
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
 [npm-url]: https://www.npmjs.com/package/@magic/transmute
 [travis-image]: https://img.shields.io/travis/com/magic/transmute/master
