@@ -6,9 +6,7 @@ export class LexLex extends marked.Lexer {
   }
 
   lex(src) {
-    src = src
-      .replace(/\r\n|\r/g, '\n')
-      .replace(/\t/g, '    ');
+    src = src.replace(/\r\n|\r/g, '\n').replace(/\t/g, '    ')
 
     return this.token(src, true)
   }

@@ -25,7 +25,11 @@ export default [
   { fn: html(h4.html).rendered, expect: h4.magic, info: 'can handle h4' },
   { fn: html(h5.html).rendered, expect: h5.magic, info: 'can handle h5' },
   { fn: html(link.html).rendered, expect: link.magic, info: 'can handle links' },
-  { fn: html(code.html).rendered, expect: code.magic, info: 'can handle code blocks with language' },
+  {
+    fn: html(code.html).rendered,
+    expect: code.magic,
+    info: 'can handle code blocks with language',
+  },
   {
     fn: html(codeNoLang.html).rendered,
     expect: codeNoLang.magic,

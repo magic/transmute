@@ -13,7 +13,7 @@ import { LexLex, escape, findState } from './lib/index.mjs'
 export const markdown = string => {
   const { state, input } = findState(string)
 
-  const lexer = new LexLex();
+  const lexer = new LexLex()
   const tokens = lexer.lex(input)
 
   const md = marked(input)
