@@ -8,22 +8,61 @@ import marked from 'marked'
 import parse5 from 'parse5'
 import prettier from 'prettier'
 
+import { LexLex } from './lib/index.mjs'
+
 const escape = str =>
   str
     .replace(/'/g, "\\'")
     .replace(/`/g, '\\`')
     .replace(/"/g, '\\"')
 
-export const markdown = input => {
-  const md = marked(input)
-  return html(md)
+export const findState = input => {
+  if (input.trim().startsWith('---')) {
+    const splinters = input.split('---')
+
+    // bail early, not a state declaration.
+    if (input.length < 3) {
+      return input
+    }
+
+    const stateJson = splinters[1]
+    input = splinters[2]
+
+    if (stateJson.trim().startsWith('@state')) {
+      const state = JSON.parse(stateJson.replace('@state', ''))
+      return {
+        state,
+        input,
+      }
+    }
+  }
+
+  return {
+    input,
+  }
 }
 
-export const html = input => {
-  const ast = parse5.parseFragment(input)
+export const markdown = string => {
+  const { state, input } = findState(string)
+
+  const lexer = new LexLex();
+  const tokens = lexer.lex(input)
+
+  const md = marked(input)
+  return html(md, state)
+}
+
+export const html = (string, state) => {
+  if (!state) {
+    const { state: st, input } = findState(string)
+    state = st
+    string = input
+  }
+
+  const ast = parse5.parseFragment(string)
   const out = stringifyAst(ast)
 
-  return out
+  return { state, rendered: out }
 }
 
 const stringifyAst = ast => {
@@ -101,8 +140,8 @@ const stringifyAst = ast => {
   })
 
   return stringified
-    .filter(a => a)
     .map(a => a.trim())
+    .filter(a => a)
     .join(',\n')
 }
 

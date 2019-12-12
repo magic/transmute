@@ -16,11 +16,11 @@ export const runCli = (html, isMarkdown, res) => {
   }
 
   if (res.argv['--addWrapper']) {
-    out = `export default [\n${out},\n]`
+    out.rendered = `export default [\n${out.rendered},\n]`
   }
 
   if (!res.argv['--noPretty']) {
-    out = prettier.format(out, {
+    out.rendered = prettier.format(out.rendered, {
       semi: false,
       parser: 'babel',
       singleQuote: true,
@@ -37,8 +37,8 @@ export const runCli = (html, isMarkdown, res) => {
     }
 
     log.info('writing to:', { outputFile })
-    fs.writeFileSync(outputFile, out)
+    fs.writeFileSync(outputFile, out.rendered)
   } else {
-    console.log(out)
+    console.log(out.rendered)
   }
 }
