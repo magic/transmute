@@ -97,6 +97,12 @@ fix cli
 ##### 0.0.4
 update @magic dependencies to use npm packages instead of github
 
+##### 0.0.5 - unreleased
+add lexer without functionality to prepare for @magic-modules.
+move functions into lib.
+extract state from html and markdown files.
+
+
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
 [npm-url]: https://www.npmjs.com/package/@magic/transmute
 [travis-image]: https://img.shields.io/travis/com/magic/transmute/master
