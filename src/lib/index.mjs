@@ -11,8 +11,8 @@ export const findState = input => {
     const splinters = input.split('---')
 
     // bail early, not a state declaration.
-    if (input.length < 3) {
-      return input
+    if (splinters.length < 3) {
+      return { input }
     }
 
     const stateJson = splinters[1]
