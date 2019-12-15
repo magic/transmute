@@ -97,10 +97,12 @@ fix cli
 ##### 0.0.4
 update @magic dependencies to use npm packages instead of github
 
-##### 0.0.5 - unreleased
-add lexer without functionality to prepare for @magic-modules.
-move functions into lib.
-extract state from html and markdown files.
+##### 0.0.5
+extract state from html and markdown files
+allow usage of state variables in markdown and html
+
+##### 0.0.6 - unreleased
+...
 
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
