@@ -39,26 +39,24 @@ file     - file to magic functions
 --str         - an input string of either html or markdown, depending on running command
   `),
 
-    h4({ id: 'usage-api' }, 'js api'),
-
-    h5({ id: 'usage-api-transpile-html-string' }, 'transpile html string:'),
+    h5({ id: 'usage-cli-transpile-html-string' }, 'transpile html string:'),
     Pre(`magic-transmute html --str '<a href="https://magic.github.io">magic!</a>'`),
 
-    h5({ id: 'usage-api-transpile-markdown-string' }, 'transpile markdown string:'),
+    h5({ id: 'usage-cli-transpile-markdown-string' }, 'transpile markdown string:'),
     Pre("magic-transmute markdown --str '[magic!](https://magic.github.io)'"),
 
-    h5({ id: 'usage-api-html-file' }, 'html file:'),
+    h5({ id: 'usage-cli-html-file' }, 'html file:'),
     Pre('magic-transmute file --input input.html --output output.mjs'),
 
-    h5({ id: 'usage-api-markdown-file' }, 'markdown file'),
+    h5({ id: 'usage-cli-markdown-file' }, 'markdown file'),
     p('(.markdown and .md get recognized):'),
     Pre('magic-transmute file --input input.md --output output.mjs'),
 
-    h5({ id: 'usage-api-force-markdown' }, 'force markdown'),
+    h5({ id: 'usage-cli-force-markdown' }, 'force markdown'),
     p('(arbitrary file extensions)'),
     Pre('magic-transmute file --input input.txt --output output.mjs --markdown'),
 
-    h4({ id: 'usage-api-examples' }, 'api examples'),
+    h4({ id: 'usage-api' }, 'api examples'),
     Pre(`
 import transmute from '@magic/transmute'
 
