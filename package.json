@@ -46,7 +46,7 @@
   "dependencies": {
     "@magic/cli": "0.0.10",
     "@magic/log": "0.1.2",
-    "marked": "0.7.0",
+    "marked": "0.8.0",
     "parse5": "5.1.1",
     "prettier": "1.19.1"
   },
