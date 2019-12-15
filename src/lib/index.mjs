@@ -31,3 +31,5 @@ export const findState = input => {
     input,
   }
 }
+
+export const implantState = ({ input, state }) => eval('`' + input.replace(/`/g, '\\`') + '`')

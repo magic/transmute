@@ -8,15 +8,17 @@ import marked from 'marked'
 import parse5 from 'parse5'
 import prettier from 'prettier'
 
-import { LexLex, escape, findState } from './lib/index.mjs'
+import { LexLex, escape, findState, implantState } from './lib/index.mjs'
 
 export const markdown = string => {
-  const { state, input } = findState(string)
+  const { input, state } = findState(string)
 
   const lexer = new LexLex()
   const tokens = lexer.lex(input)
 
-  const md = marked(input)
+  const implanted = implantState({ input, state })
+  const md = marked(implanted)
+
   return html(md, state)
 }
 
@@ -27,7 +29,9 @@ export const html = (string, state) => {
     string = input
   }
 
-  const ast = parse5.parseFragment(string)
+  const implanted = implantState({ input: string, state })
+
+  const ast = parse5.parseFragment(implanted)
   const out = stringifyAst(ast)
 
   return { state, rendered: out }
