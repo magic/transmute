@@ -1,11 +1,13 @@
 export { LexLex } from './LexLex.mjs'
 
+// escape string delimiters in the string with escaped string delimiters
 export const escape = str =>
   str
     .replace(/'/g, "\\'")
     .replace(/`/g, '\\`')
     .replace(/"/g, '\\"')
 
+// find and extract the page state from both markdown and html vars.
 export const findState = input => {
   if (input.trim().startsWith('---')) {
     const splinters = input.split('---')
@@ -32,4 +34,6 @@ export const findState = input => {
   }
 }
 
+// using eval to be able to expand variables in the template string.
+// TODO: find a way to do this without eval
 export const implantState = ({ input, state }) => eval('`' + input.replace(/`/g, '\\`') + '`')
