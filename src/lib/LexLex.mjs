@@ -1,8 +1,10 @@
 import marked from 'marked'
 
+// this customized lexer will detect @magic-modules in markdown files.
 export class LexLex extends marked.Lexer {
-  constructor() {
-    super()
+  constructor(options) {
+    super(options)
+
   }
 
   lex(src) {
