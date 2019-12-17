@@ -102,6 +102,7 @@ extract state from html and markdown files
 allow usage of state variables in markdown and html
 
 ##### 0.0.6 - unreleased
+pass options from LexLex to marked.Lexer
 ...
 
 
