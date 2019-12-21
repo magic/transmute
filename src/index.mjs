@@ -13,9 +13,6 @@ import { LexLex, escape, findState, implantState } from './lib/index.mjs'
 export const markdown = string => {
   const { input, state } = findState(string)
 
-  const lexer = new LexLex()
-  const tokens = lexer.lex(input)
-
   const implanted = implantState({ input, state })
   const md = marked(implanted)
 
@@ -26,12 +23,11 @@ export const html = (string, state) => {
   if (!state) {
     const { state: st, input } = findState(string)
     state = st
-    string = input
+    string = implantState({ input: string, state })
   }
 
-  const implanted = implantState({ input: string, state })
 
-  const ast = parse5.parseFragment(implanted)
+  const ast = parse5.parseFragment(string)
   const out = stringifyAst(ast)
 
   return { state, rendered: out }
