@@ -103,7 +103,7 @@ allow usage of state variables in markdown and html
 
 ##### 0.0.6 - unreleased
 pass options from LexLex to marked.Lexer
-...
+only implant state in html if it has not been passed as argument
 
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
