@@ -44,6 +44,7 @@
     "@magic/types": "0.1.2"
   },
   "dependencies": {
+    "@magic/cases": "0.0.1",
     "@magic/cli": "0.0.10",
     "@magic/log": "0.1.2",
     "marked": "0.8.0",
