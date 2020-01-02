@@ -105,6 +105,7 @@ update @magic dependencies to use npm packages instead of github
 * pass options from LexLex to marked.Lexer
 * only implant state in html if it has not been passed as argument
 * correctly camelCase object keys for html tags
+* correctly merge passed state with in-file state for markdown and html
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
 [npm-url]: https://www.npmjs.com/package/@magic/transmute
