@@ -101,11 +101,14 @@ update @magic dependencies to use npm packages instead of github
 * extract state from html and markdown files
 * allow usage of state variables in markdown and html
 
-##### 0.0.6 - unreleased
+##### 0.0.6
 * pass options from LexLex to marked.Lexer
 * only implant state in html if it has not been passed as argument
 * correctly camelCase object keys for html tags
 * correctly merge passed state with in-file state for markdown and html
+
+##### 0.0.7 - unreleased
+...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
 [npm-url]: https://www.npmjs.com/package/@magic/transmute
