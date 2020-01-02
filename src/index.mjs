@@ -28,7 +28,7 @@ export const markdown = (string, state = {}) => {
 export const html = (string, state = {}) => {
   const { input, state: st = {} } = findState(string)
 
-  if (is.empty(st)) {
+  if (!is.empty(st)) {
     state = { ...state, ...st }
     string = input
   }
