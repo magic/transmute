@@ -3,6 +3,7 @@ import path from 'path'
 
 import log from '@magic/log'
 import is from '@magic/types'
+import cases from '@magic/cases'
 
 import marked from 'marked'
 import parse5 from 'parse5'
@@ -75,7 +76,7 @@ const stringifyAst = ast => {
 
     let out = ''
     if (node.attrs && node.attrs.length) {
-      out = node.attrs.map(({ name, value }) => `${name}: '${value}'`).join(', ')
+      out = node.attrs.map(({ name, value }) => `${cases.camel(name)}: '${value}'`).join(', ')
     }
 
     if (out) {
