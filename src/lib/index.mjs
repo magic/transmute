@@ -1,6 +1,6 @@
 export { LexLex } from './LexLex.mjs'
 
-// escape string delimiters in the string with escaped string delimiters
+// escape string delimiters in the string
 export const escape = str =>
   str
     .replace(/'/g, "\\'")
