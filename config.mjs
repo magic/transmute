@@ -4,5 +4,5 @@ export default {
   PUBLIC: 'docs',
   URL: 'magic.github.io/transmute',
   WEB_ROOT: '/transmute/',
-  HOIST: 'Gdpr',
+  HOIST: ['Gdpr', 'LightSwitch'],
 }

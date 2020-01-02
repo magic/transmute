@@ -75,6 +75,4 @@ console.log(magic)
 // that's it.
 `),
   ]),
-
-  LightSwitch(state),
 ]
