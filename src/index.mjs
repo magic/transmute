@@ -12,7 +12,7 @@ import prettier from 'prettier'
 import { escape, findState, implantState } from './lib/index.mjs'
 
 export const markdown = (string, state = {}) => {
-  const { input, state : st = {} } = findState(string)
+  const { input, state: st = {} } = findState(string)
 
   if (!is.empty(st)) {
     string = input

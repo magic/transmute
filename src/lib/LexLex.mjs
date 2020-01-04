@@ -4,7 +4,6 @@ import marked from 'marked'
 export class LexLex extends marked.Lexer {
   constructor(options) {
     super(options)
-
   }
 
   lex(src) {
