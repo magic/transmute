@@ -7,7 +7,6 @@ import cases from '@magic/cases'
 
 import marked from 'marked'
 import parse5 from 'parse5'
-import prettier from 'prettier'
 
 import { escape, findState, implantState } from './lib/index.mjs'
 
