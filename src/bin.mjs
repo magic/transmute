@@ -1,7 +1,8 @@
-import { cli } from '@magic/cli/src/index.mjs'
+#!/usr/bin/env node
 
-import { handleArgv } from './handleArgv.mjs'
-import { runCli } from './runCli.mjs'
+import { cli } from '@magic/cli'
+
+import { handleArgv, runCli } from './bin/index.mjs'
 
 const args = {
   options: [

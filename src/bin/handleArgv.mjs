@@ -4,7 +4,7 @@ import path from 'path'
 import log from '@magic/log'
 
 export const handleArgv = ({ cmds, argv }) => {
-  if (!argv['--input'] && !argv['--str']) {
+  if (!args.input && !args.str) {
     log.error('Input required', 'specify either --str or --input')
     process.exit()
   }
@@ -13,12 +13,12 @@ export const handleArgv = ({ cmds, argv }) => {
   let isMarkdown = false
 
   if (cmds.file) {
-    if (!argv['--input']) {
+    if (!args.input) {
       log.error('--input file required.')
       process.exit()
     }
 
-    const file = argv['--input'][0]
+    const file = args.input[0]
     if (!fs.existsSync(file)) {
       log.error('File not found', file)
       process.exit()
@@ -36,8 +36,8 @@ export const handleArgv = ({ cmds, argv }) => {
       isMarkdown = true
     }
 
-    if (argv['--str']) {
-      html = argv['--str'].join(' ').trim()
+    if (args.str) {
+      html = args.str.join(' ').trim()
     }
   }
 

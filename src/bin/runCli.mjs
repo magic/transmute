@@ -15,11 +15,11 @@ export const runCli = (html, isMarkdown, res) => {
     out = transmute.html(html)
   }
 
-  if (res.argv['--addWrapper']) {
+  if (res.args.addWrapper) {
     out.rendered = `export default [\n${out.rendered},\n]`
   }
 
-  if (!res.argv['--noPretty']) {
+  if (!res.args.noPretty) {
     out.rendered = prettier.format(out.rendered, {
       semi: false,
       parser: 'babel',
@@ -28,8 +28,8 @@ export const runCli = (html, isMarkdown, res) => {
     })
   }
 
-  if (res.argv['--output']) {
-    const outputFile = res.argv['--output'].join('')
+  if (res.args.output) {
+    const outputFile = res.args.output.join('')
     const dir = path.dirname(outputFile)
     if (!fs.existsSync(dir)) {
       log.info('output dir does not exist, creating it.', dir)
