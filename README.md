@@ -107,10 +107,13 @@ update @magic dependencies to use npm packages instead of github
 * correctly camelCase object keys for html tags
 * correctly merge passed state with in-file state for markdown and html
 
-##### 0.0.7
+##### 0.0.7 - broken
 remove commonjs support, node >= 13.5.0 required
 
-##### 0.0.8 - unreleased
+##### 0.0.8
+export correct cli file
+
+##### 0.0.9 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
