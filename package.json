@@ -5,10 +5,9 @@
   "homepage": "https://magic.github.io/transmute",
   "license": "AGPL-3.0",
   "description": "convert markdown and html to magic function strings.",
-  "module": "src/index.mjs",
   "main": "src/index.mjs",
   "bin": {
-    "magic-transmute": "src/bin/bin.js"
+    "magic-transmute": "src/bin.mjs"
   },
   "files": [
     "src"
