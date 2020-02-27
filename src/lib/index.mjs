@@ -1,5 +1,3 @@
-export { LexLex } from './LexLex.mjs'
-
 // escape string delimiters in the string
 export const escape = str =>
   str
