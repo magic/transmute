@@ -20,7 +20,8 @@ export const markdown = (string, state = {}, modules = []) => {
 
   const implanted = implantState({ input, state })
   const md = marked(implanted)
-  return html(md, state, modules)
+  const out = html(md, state, modules)
+  return out
 }
 
 export const html = (string, state = {}, modules = []) => {
@@ -36,7 +37,6 @@ export const html = (string, state = {}, modules = []) => {
   const ast = parse5.parseFragment(implanted)
 
   const out = stringifyAst(ast, modules)
-
   return { state, rendered: out }
 }
 
@@ -44,7 +44,6 @@ const stringifyAst = (ast, modules = []) => {
   if (ast.nodeName === '#text') {
     return `'${escape(ast.value)}'`
   }
-
 
   modules.forEach(mod => {
     if (mod.toLowerCase() === ast.nodeName) {
@@ -126,7 +125,18 @@ const stringifyAst = (ast, modules = []) => {
       out = out.replace('href:', 'to:')
     }
 
-    return `${node.tagName}(${out})`
+    if (out === "{ state: 'state' }") {
+      out = 'state'
+    } else if (out.includes("{ state: '' }")) {
+      out = out.replace("{ state: '' }", 'state')
+    } else if (out.includes("state: 'state'")) {
+      out = out.replace("state: 'state'", 'state')
+    } else if (out.includes("state: ''")) {
+      out = out.replace("state: ''", 'state')
+    }
+
+    const result = `${node.tagName}(${out})`
+    return result
   })
 
   return stringified
