@@ -10,7 +10,7 @@ import parse5 from 'parse5'
 
 import { escape, findState, implantState } from './lib/index.mjs'
 
-export const markdown = (string, state = {}) => {
+export const markdown = (string, state = {}, modules = []) => {
   const { input, state: st = {} } = findState(string)
 
   if (!is.empty(st)) {
@@ -20,11 +20,10 @@ export const markdown = (string, state = {}) => {
 
   const implanted = implantState({ input, state })
   const md = marked(implanted)
-
-  return html(md, state)
+  return html(md, state, modules)
 }
 
-export const html = (string, state = {}) => {
+export const html = (string, state = {}, modules = []) => {
   const { input, state: st = {} } = findState(string)
 
   if (!is.empty(st)) {
@@ -35,18 +34,34 @@ export const html = (string, state = {}) => {
   const implanted = implantState({ input: string, state })
 
   const ast = parse5.parseFragment(implanted)
-  const out = stringifyAst(ast)
+
+  const out = stringifyAst(ast, modules)
 
   return { state, rendered: out }
 }
 
-const stringifyAst = ast => {
+const stringifyAst = (ast, modules = []) => {
   if (ast.nodeName === '#text') {
     return `'${escape(ast.value)}'`
   }
 
+
+  modules.forEach(mod => {
+    if (mod.toLowerCase() === ast.nodeName) {
+      ast.nodeName = mod
+      ast.tagName = mod
+    }
+  })
+
   const stringified = ast.childNodes.map(node => {
     let { value } = node
+
+    modules.forEach(mod => {
+      if (mod.toLowerCase() === node.nodeName) {
+        node.nodeName = mod
+        node.tagName = mod
+      }
+    })
 
     if (node.nodeName === '#text') {
       let delimiter = "'"
@@ -83,7 +98,7 @@ const stringifyAst = ast => {
     }
 
     if (node.childNodes && node.childNodes.length) {
-      const children = stringifyAst(node)
+      const children = stringifyAst(node, modules)
 
       if (out) {
         out += ', '
