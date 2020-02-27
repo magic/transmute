@@ -97,3 +97,15 @@ export const ulSingle = {
 export const img = {
   md: '[/logo.png]',
 }
+
+export const html = {
+  md: '<a href="/testing">text</a>',
+  html: '<a href="/testing">text</a>',
+  magic: `p(Link({ to: '/testing' }, 'text'))`,
+}
+
+export const htmlModule = {
+  md: '<ModuleName arg="testing">children</ModuleName>',
+  html: '<p><ModuleName arg="testing">children</ModuleName></p>',
+  magic: `p(ModuleName({ arg: 'testing' }, 'children'))`,
+}

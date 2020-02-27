@@ -16,6 +16,8 @@ import {
   sentence,
   ul,
   ulSingle,
+  html,
+  htmlModule,
 } from './.data/inputs.mjs'
 
 export default [
@@ -50,4 +52,6 @@ export default [
   { fn: md(sentence.md).rendered, expect: sentence.magic, info: 'can handle sentences' },
   { fn: md(ul.md).rendered, expect: ul.magic, info: 'can handle ul lists' },
   { fn: md(ulSingle.md).rendered, expect: ulSingle.magic, info: 'can handle ul lists' },
+  { fn: md(html.md, {}, ['ModuleName']).rendered, expect: html.magic, info: 'can handle html' },
+  { fn: md(htmlModule.md, {}, ['ModuleName']).rendered, expect: htmlModule.magic, info: 'can handle magic modules' },
 ]
