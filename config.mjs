@@ -1,5 +1,5 @@
 export default {
-  ROOT: 'docsrc',
+  ROOT: 'example',
   THEME: 'docs',
   PUBLIC: 'docs',
   URL: 'magic.github.io/transmute',
