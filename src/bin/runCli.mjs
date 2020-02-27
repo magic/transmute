@@ -39,6 +39,6 @@ export const runCli = (html, isMarkdown, res) => {
     log.info('writing to:', { outputFile })
     fs.writeFileSync(outputFile, out.rendered)
   } else {
-    console.log(out.rendered)
+    log(out.rendered)
   }
 }
