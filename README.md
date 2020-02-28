@@ -113,7 +113,10 @@ remove commonjs support, node >= 13.5.0 required
 ##### 0.0.8
 export correct cli file
 
-##### 0.0.9 - unreleased
+##### 0.0.9 
+do not wrap @magic-modules in p tags
+
+##### 0.0.10 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
