@@ -106,6 +106,6 @@ export const html = {
 
 export const htmlModule = {
   md: '<ModuleName arg="testing">children</ModuleName>',
-  html: '<p><ModuleName arg="testing">children</ModuleName></p>',
-  magic: `p(ModuleName({ arg: 'testing' }, 'children'))`,
+  html: '<ModuleName arg="testing">children</ModuleName>',
+  magic: `ModuleName({ arg: 'testing' }, 'children')`,
 }
