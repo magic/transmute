@@ -19,8 +19,17 @@ export const markdown = (string, state = {}, modules = []) => {
   }
 
   const implanted = implantState({ input, state })
-  const md = marked(implanted)
+  let md = marked(implanted)
+
+  // remove paragraphs around modules.
+  modules.forEach(mod => {
+    if (md.includes(`<p><${mod}`)) {
+      md = md.replace(`<p><${mod}`, `<${mod}`).replace(`</${mod}></p>`, `</${mod}>`)
+    }
+  })
+
   const out = html(md, state, modules)
+
   return out
 }
 
@@ -56,7 +65,7 @@ const stringifyAst = (ast, modules = []) => {
     let { value } = node
 
     modules.forEach(mod => {
-      if (mod.toLowerCase() === node.nodeName) {
+      if (mod.toLowerCase() === node.nodeName && mod !== node.nodeName) {
         node.nodeName = mod
         node.tagName = mod
       }
@@ -136,6 +145,7 @@ const stringifyAst = (ast, modules = []) => {
     }
 
     const result = `${node.tagName}(${out})`
+
     return result
   })
 
