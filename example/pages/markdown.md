@@ -24,9 +24,15 @@ it is used internally to, for example, add the title and meta rel="description" 
 * [@magic-modules](https://magic-modules.github.io)
 * [@magic-themes](https://magic-themes.github.io)
 
+<a href="/testing">yay</a>
+
+<Link to="/testing" text="Whatcha gonna do?"></Link>
+
+<MarkdownEmbed state></MarkdownEmbed>
+
 the state looks like the following:
 
-```
+<Pre>
 \-\-\-
 @state
 {
@@ -34,4 +40,4 @@ the state looks like the following:
   "description": "markdown file description"
 }
 \-\-\-
-```
+</Pre>
