@@ -126,6 +126,10 @@ do not wrap @magic-modules in p tags
 ##### 0.0.12
 state keys in ${} and {{ }} get trimmed... doh.
 
+##### 0.0.13
+return originalState, which is the state derived from the markdown/html file.
+this allows @magic to use this state for individual pages when building them.
+
 ##### 0.0.13 - unreleased
 ...
 
