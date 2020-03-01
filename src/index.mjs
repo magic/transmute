@@ -7,7 +7,7 @@ import is from '@magic/types'
 import marked from 'marked'
 import parse5 from 'parse5'
 
-import { escape, findState, stringifyAst, implantState } from './lib/index.mjs'
+import { escape, findState, stringifyAst, implantState, MarkedMagicRenderer } from './lib/index.mjs'
 
 export const markdown = (string, state = {}, modules = [], originalState = {}) => {
   const { input, state: st = {} } = findState(string)
@@ -22,8 +22,10 @@ export const markdown = (string, state = {}, modules = [], originalState = {}) =
     }
   }
 
+  const renderer = new MarkedMagicRenderer()
+
   const implanted = implantState({ input: string, state })
-  let md = marked(implanted)
+  let md = marked(implanted, { renderer })
 
   // remove paragraphs around modules.
   modules.forEach(mod => {
@@ -32,9 +34,11 @@ export const markdown = (string, state = {}, modules = [], originalState = {}) =
     }
   })
 
-  const out = html(md, state, modules, originalState)
+  // const out = html(md, state, modules, originalState)
 
-  return out
+  console.log({ md })
+
+  return { state, rendered: md, originalState }
 }
 
 export const html = (string, state = {}, modules = [], originalState = {}) => {
@@ -54,7 +58,10 @@ export const html = (string, state = {}, modules = [], originalState = {}) => {
   const ast = parse5.parseFragment(implanted)
 
   const out = stringifyAst(ast, modules)
-  return { state, rendered: out, originalState }
+
+  console.log(out);
+
+  return out
 }
 
 export const md = markdown
