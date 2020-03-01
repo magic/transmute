@@ -42,7 +42,7 @@ export const implantState = ({ input, state }) => {
         throw new Error(`Unknown State variable ${match}, val: ${val}, url: ${state.url}`)
       }
 
-      input = input.replace(match, state[transformedMatch])
+      input = input.replace(match, val)
     })
   }
 
