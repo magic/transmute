@@ -1,9 +1,3 @@
----
-@state {
-  "description": "transform markdown and html to @magic-modules"
-}
----
-
 # ${state.title}
 
 <GitBadges>magic/transmute</GitBadges>

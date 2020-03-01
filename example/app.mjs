@@ -12,6 +12,7 @@ export const state = config => ({
   },
 
   title: '@magic/transmute',
+  description: 'transform markdown and html to @magic-modules',
 
   menu: [
     {
