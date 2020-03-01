@@ -131,6 +131,9 @@ return originalState, which is the state derived from the markdown/html file.
 this allows @magic to use this state for individual pages when building them.
 
 ##### 0.0.13 - unreleased
+* nested state variables in template strings eg {{state.test.deep.var}} now work.
+
+##### 0.0.14 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
