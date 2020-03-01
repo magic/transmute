@@ -17,7 +17,7 @@ export const markdown = (string, state = {}, modules = []) => {
     state = { ...state, ...st }
   }
 
-  const implanted = implantState({ input, state })
+  const implanted = implantState({ input: string, state })
   let md = marked(implanted)
 
   // remove paragraphs around modules.
