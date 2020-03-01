@@ -18,7 +18,7 @@ export const implantState = ({ input, state }) => {
         transformedMatch = transformedMatch.substr(2, match.length - 4)
       }
 
-      transformedMatch = transformedMatch.replace('state.', '')
+      transformedMatch = transformedMatch.replace('state.', '').trim()
 
       if (transformedMatch.includes('.')) {
         const subMatches = transformedMatch.split('.')
@@ -48,4 +48,3 @@ export const implantState = ({ input, state }) => {
 
   return input
 }
-
