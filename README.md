@@ -123,7 +123,10 @@ do not wrap @magic-modules in p tags
 * remove eval from state injection function.
 * correctly handle both ${} and {{}} variables in markdown and html files.
 
-##### 0.0.12 - unreleased
+##### 0.0.12
+state keys in ${} and {{ }} get trimmed... doh.
+
+##### 0.0.13 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
