@@ -9,12 +9,17 @@ import parse5 from 'parse5'
 
 import { escape, findState, stringifyAst, implantState } from './lib/index.mjs'
 
-export const markdown = (string, state = {}, modules = []) => {
+export const markdown = (string, state = {}, modules = [], originalState = {}) => {
   const { input, state: st = {} } = findState(string)
 
   if (!is.empty(st)) {
     string = input
     state = { ...state, ...st }
+
+    originalState = {
+      ...originalState,
+      ...st,
+    }
   }
 
   const implanted = implantState({ input: string, state })
@@ -27,17 +32,21 @@ export const markdown = (string, state = {}, modules = []) => {
     }
   })
 
-  const out = html(md, state, modules)
+  const out = html(md, state, modules, originalState)
 
   return out
 }
 
-export const html = (string, state = {}, modules = []) => {
+export const html = (string, state = {}, modules = [], originalState = {}) => {
   const { input, state: st = {} } = findState(string)
 
   if (!is.empty(st)) {
     state = { ...state, ...st }
     string = input
+    originalState = {
+      ...originalState,
+      ...st,
+    }
   }
 
   const implanted = implantState({ input: string, state })
@@ -45,7 +54,7 @@ export const html = (string, state = {}, modules = []) => {
   const ast = parse5.parseFragment(implanted)
 
   const out = stringifyAst(ast, modules)
-  return { state, rendered: out }
+  return { state, rendered: out, originalState }
 }
 
 export const md = markdown
