@@ -1,3 +1,6 @@
+import is from '@magic/types'
+import cases from '@magic/cases'
+
 // escape string delimiters in the string
 export const escape = str =>
   str
@@ -57,7 +60,7 @@ export const implantState = ({ input, state }) => {
         let curState = state
 
         subMatches.forEach(subM => {
-          if (typeof curState[subM] !== 'undefined') {
+          if (is.undefined(curState[subM])) {
             curState = curState[subM]
             val = curState
           } else {
@@ -70,7 +73,7 @@ export const implantState = ({ input, state }) => {
         val = state[transformedMatch]
       }
 
-      if (typeof val === 'undefined') {
+      if (is.undefined(val)) {
         throw new Error(`Unknown State variable ${match} url: ${state.url}`)
       }
 

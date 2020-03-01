@@ -3,7 +3,6 @@ import path from 'path'
 
 import log from '@magic/log'
 import is from '@magic/types'
-import cases from '@magic/cases'
 
 import marked from 'marked'
 import parse5 from 'parse5'
