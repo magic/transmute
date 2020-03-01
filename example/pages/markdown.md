@@ -8,7 +8,7 @@
 
 ## ${state.title}
 
-${state.description}
+{{state.description}}
 
 see [this file in the example dir](https://github.com/magic/core/blob/master/example/pages/modules/markdown.md) for an example.
 

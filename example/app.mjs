@@ -11,6 +11,8 @@ export const state = config => ({
     },
   },
 
+  title: '@magic/transmute',
+
   menu: [
     {
       to: '/#installation',
