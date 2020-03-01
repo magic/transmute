@@ -113,10 +113,17 @@ remove commonjs support, node >= 13.5.0 required
 ##### 0.0.8
 export correct cli file
 
-##### 0.0.9 
+##### 0.0.9
+do not lowercase @magic-module names, some other minor changes
+
+##### 0.0.10
 do not wrap @magic-modules in p tags
 
-##### 0.0.10 - unreleased
+##### 0.0.11
+* remove eval from state injection function.
+* correctly handle both ${} and {{}} variables in markdown and html files.
+
+##### 0.0.12 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
