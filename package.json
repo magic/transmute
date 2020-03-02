@@ -24,7 +24,7 @@
     "url": "https://github.com/magic/transmute/issues"
   },
   "scripts": {
-    "start": "t",
+    "start": "t -p",
     "test": "t",
     "format": "f -w --exclude docs",
     "build": "NODE_ENV=production magic build",
