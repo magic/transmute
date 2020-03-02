@@ -59,10 +59,6 @@ export const html = (string, state = {}, modules = [], originalState = {}) => {
 
   const implanted = implantState({ input: string, state })
 
-  if (string.trim().startsWith('<h2>${stat')) {
-    console.log({ implanted })
-  }
-
   const ast = posthtmlParser(implanted)
 
   const out = posthtmlMagicRenderer(ast, modules)
