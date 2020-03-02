@@ -102,6 +102,12 @@ export const htmlModule = {
   magic: `ModuleName({ arg: 'testing' }, 'children')`,
 }
 
+export const unescapeTest = {
+  md: '<div>&lt; &#39; &#8968;</div>',
+  html: '<div>&lt; &#39; &#8968;</div>',
+  magic: `div("< ' ⌈")`,
+}
+
 export const simpleSvg = {
   input: '<svg><g></g></svg>',
   expect: 'svg(g())',
