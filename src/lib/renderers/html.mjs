@@ -1,6 +1,13 @@
+import cases from '@magic/cases'
 import is from '@magic/types'
 
 const handleContent = content => {
+  if (!content) {
+    return ''
+  }
+
+  content = content.filter(a => (!is.string(a) ? a : a.trim()))
+
   if (is.array(content)) {
     if (content.length === 1) {
       return html(content[0])
@@ -18,11 +25,19 @@ const handleContent = content => {
 
 const delimiters = ['"', "'", '`']
 
-const handleAttrs = attrs => {
+const handleAttrs = (attrs, tag) => {
   if (attrs) {
     attrs = Object.entries(attrs)
       .map(([key, val]) => {
         val = val.trim()
+
+        if (tag === 'a' || tag === 'Link') {
+          if (key === 'href') {
+            key = 'to'
+          }
+        }
+
+        key = cases.camel(key)
 
         if (!val) {
           return key
@@ -54,7 +69,17 @@ export const html = ast => {
     if (ast.includes('\n')) {
       ast = '`' + ast.split('\n').join('\n') + '`'
     } else {
-      ast = `'${ast}'`
+      if (!ast.includes("'") || !ast.replace("\\'", '').includes("'")) {
+        ast = `'${ast}'`
+      } else if (!ast.includes('"')) {
+        ast = `"${ast}"`
+      } else if (!ast.includes('`')) {
+        ast = '`' + ast + '`'
+      } else {
+        throw new Error(
+          'Invalid string found. Either do not use all three of ", ` and \', or escape one of them.',
+        )
+      }
     }
 
     return ast
@@ -68,10 +93,26 @@ export const html = ast => {
       content = content.trim()
     }
 
-    attrs = handleAttrs(attrs)
+    attrs = handleAttrs(attrs, tag)
 
     if (attrs && content) {
       attrs += ', '
+    }
+
+    if (tag === 'a') {
+      tag = 'Link'
+    }
+
+    if (tag === 'img') {
+      tag = 'Img'
+    }
+
+    if (tag === 'strong') {
+      tag = 'b'
+    }
+
+    if (tag === 'italic') {
+      tag = 'em'
     }
 
     return `${tag}(${attrs}${content})`
