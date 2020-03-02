@@ -1,7 +1,9 @@
 import marked from 'marked'
 import helpers from 'marked/src/helpers.js'
 
-const { cleanUrl, escape } = helpers
+import { stringDecode } from '../stringDecode.mjs'
+
+const { escape } = helpers
 
 export const markdown = new marked.Renderer()
 
@@ -110,7 +112,10 @@ markdown.html = html => {
 
 markdown.paragraph = text => {
   if (text.startsWith('<')) {
-    const tagName = text.substr(1).split(' ')[0]
+    const tagName = text
+      .substr(1)
+      .split(' ')[0]
+      .split('>')[0]
 
     const inlineTags = ['a', 'Link', 'img', 'Img', 'strong', 'b', 'i', 'em']
 
@@ -122,4 +127,10 @@ markdown.paragraph = text => {
   }
 
   return `<p>${text}</p>\n`
+}
+
+markdown.strong = text => `<b>${text}</b>`
+
+markdown.text = text => {
+  return stringDecode(text)
 }
