@@ -107,3 +107,19 @@ markedMagicRenderer.html = html => {
 
   return html
 }
+
+markedMagicRenderer.paragraph = text => {
+  if (text.startsWith('<')) {
+    const tagName = text.substr(1).split(' ')[0]
+
+    const inlineTags = ['a', 'Link', 'img', 'Img', 'strong', 'b', 'i', 'em']
+
+    if (inlineTags.includes(tagName)) {
+      return `<p>${text}</p>\n`
+    } else {
+      return `${text}\n`
+    }
+  }
+
+  return `<p>${text}</p>\n`
+}
