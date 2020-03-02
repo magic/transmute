@@ -3,10 +3,10 @@ import is from '@magic/types'
 const handleContent = content => {
   if (is.array(content)) {
     if (content.length === 1) {
-      return posthtmlMagicRenderer(content[0])
+      return html(content[0])
     }
 
-    content = `[${content.map(posthtmlMagicRenderer).filter(a => a)}]`
+    content = `[${content.map(html).filter(a => a)}]`
   }
 
   if (!content) {
@@ -45,7 +45,7 @@ const handleAttrs = attrs => {
   return attrs
 }
 
-export const posthtmlMagicRenderer = (ast, modules) => {
+export const html = ast => {
   if (is.string(ast)) {
     if (!ast.trim()) {
       return ''
@@ -77,5 +77,5 @@ export const posthtmlMagicRenderer = (ast, modules) => {
     return `${tag}(${attrs}${content})`
   }
 
-  return ast.map(posthtmlMagicRenderer).filter(a => a)
+  return ast.map(html).filter(a => a)
 }

@@ -11,11 +11,10 @@ import {
   escape,
   findState,
   implantState,
-  markedMagicRenderer,
-  posthtmlMagicRenderer,
+  renderers,
 } from './lib/index.mjs'
 
-export const markdown = (string, state = {}, modules = [], originalState = {}) => {
+export const markdown = (string, state = {}, originalState = {}) => {
   const { input, state: st = {} } = findState(string)
 
   if (!is.empty(st)) {
@@ -29,23 +28,14 @@ export const markdown = (string, state = {}, modules = [], originalState = {}) =
   }
 
   const implanted = implantState({ input: string, state })
-  let md = marked(implanted, { renderer: markedMagicRenderer })
+  let md = marked(implanted, { renderer: renderers.markdown })
 
-  // remove paragraphs around modules.
-  modules.forEach(mod => {
-    const inlineModules = ['a', 'Link', 'Img', 'img']
-
-    if (md.includes(`<p><${mod}`) && !inlineModules.includes(mod)) {
-      md = md.replace(`<p><${mod}`, `<${mod}`).replace(`</${mod}></p>`, `</${mod}>`)
-    }
-  })
-
-  const out = html(md, state, modules, originalState)
+  const out = html(md, state, originalState)
 
   return out
 }
 
-export const html = (string, state = {}, modules = [], originalState = {}) => {
+export const html = (string, state = {}, originalState = {}) => {
   const { input, state: st = {} } = findState(string)
 
   if (!is.empty(st)) {
@@ -61,7 +51,7 @@ export const html = (string, state = {}, modules = [], originalState = {}) => {
 
   const ast = posthtmlParser(implanted)
 
-  const out = posthtmlMagicRenderer(ast, modules)
+  const out = renderers.html(ast)
 
   return { state, rendered: out, originalState }
 }

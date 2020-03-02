@@ -3,9 +3,9 @@ import helpers from 'marked/src/helpers.js'
 
 const { cleanUrl, escape } = helpers
 
-export const markedMagicRenderer = new marked.Renderer()
+export const markdown = new marked.Renderer()
 
-markedMagicRenderer.code = (code, infostring, escaped) => {
+markdown.code = (code, infostring, escaped) => {
   let lang = (infostring || '').match(/\S*/)[0]
 
   if (!escaped) {
@@ -21,9 +21,9 @@ markedMagicRenderer.code = (code, infostring, escaped) => {
   return `<Pre class="${lang}">${code}</Pre>`
 }
 
-markedMagicRenderer.codespan = text => `<Pre>${text}</Pre>`
+markdown.codespan = text => `<Pre>${text}</Pre>`
 
-markedMagicRenderer.link = (href, title, text) => {
+markdown.link = (href, title, text) => {
   if (href === null) {
     return text
   }
@@ -43,7 +43,7 @@ markedMagicRenderer.link = (href, title, text) => {
   return out
 }
 
-markedMagicRenderer.image = (href, title, text) => {
+markdown.image = (href, title, text) => {
   href = cleanUrl(this.options.sanitize, this.options.baseUrl, href)
 
   if (href === null) {
@@ -65,7 +65,7 @@ markedMagicRenderer.image = (href, title, text) => {
   return out
 }
 
-markedMagicRenderer.heading = (text, level, raw, slugger) => {
+markdown.heading = (text, level, raw, slugger) => {
   let id = slugger.slug(raw)
   let cssClass = ''
 
@@ -96,7 +96,7 @@ markedMagicRenderer.heading = (text, level, raw, slugger) => {
   return `<h${level} id="${id}"${cssClass}>${text}</h${level}>\n`
 }
 
-markedMagicRenderer.html = html => {
+markdown.html = html => {
   if (html.startsWith('<img')) {
     html = html.replace('<img', '<Img')
   }
@@ -108,7 +108,7 @@ markedMagicRenderer.html = html => {
   return html
 }
 
-markedMagicRenderer.paragraph = text => {
+markdown.paragraph = text => {
   if (text.startsWith('<')) {
     const tagName = text.substr(1).split(' ')[0]
 
