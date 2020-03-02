@@ -131,6 +131,9 @@ return originalState, which is the state derived from the markdown/html file.
 this allows @magic to use this state for individual pages when building them.
 
 ##### 0.0.14
+
+##### FULL @magic-module api available from markdown.
+
 * nested state variables in template strings eg {{state.test.deep.var}} now work.
 * replace parse5 with posthtml.
 * custom markdown and custom html renderers added.
