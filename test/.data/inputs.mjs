@@ -34,20 +34,20 @@ export const h5 = {
 
 export const link = {
   md: '[a link](http://example.com)',
-  html: '<p><a href="http://example.com">a link</a></p>',
-  magic: "p(Link({ to: 'http://example.com' }, 'a link'))",
+  html: '<p><a href="http://example.com" text="a link"></a></p>',
+  magic: "p(Link({ to: 'http://example.com', text: 'a link' }))",
 }
 
 export const code = {
-  md: '```bash\ncode block\n```',
+  md: '<pre><code class="language-bash">code block</pre></code>',
   html: '<pre><code class="language-bash">code block</pre></code>',
   magic: "pre(code({ class: 'language-bash' }, 'code block'))",
 }
 
 export const codeNoLang = {
   md: '```\ncode block\n```',
-  html: '<pre><code>code block</pre></code>',
-  magic: "pre(code('code block'))",
+  html: '<Pre>code block</Pre>',
+  magic: "Pre('code block')",
 }
 
 export const p = {
@@ -58,19 +58,14 @@ export const p = {
 
 export const sentence = {
   md: "It's very easy to make some words **bold** and other words *italic* with Markdown. You can even [link!](http://example.com)",
-  html: "<p>It's very easy to make some words <strong>bold</strong> and other words <em>italic</em> with Markdown. You can even <a href=\"http://example.com\">link!</a>",
-  magic: `p(["It's very easy to make some words ",
-strong('bold'),
-' and other words ',
-em('italic'),
-' with Markdown. You can even ',
-Link({ to: 'http://example.com' }, 'link!')])`,
+  html: "<p>It's very easy to make some words <strong>bold</strong> and other words <em>italic</em> with Markdown. You can even <a href=\"http://example.com\" text=\"link!\"></a>",
+  magic: `p(["It's very easy to make some words ",b('bold'),' and other words ',em('italic'),' with Markdown. You can even ',Link({ to: 'http://example.com', text: 'link!' })])`,
 }
 
 export const strong = {
   md: '**bold**',
-  html: '<p><strong>bold</strong></p>',
-  magic: "p(strong('bold'))",
+  html: '<p><b>bold</b></p>',
+  magic: "p(b('bold'))",
 }
 
 export const italic = {
@@ -82,10 +77,7 @@ export const italic = {
 export const ul = {
   md: '* listitem 1\n* listitem 2\n  * listitem 2 subitem 1\n  * listitem 2 subitem 2',
   html: '<ul><li>listitem 1</li><li>listitem 2<ul><li>listitem 2 subitem 1</li><li>listitem 2 subitem 2</li></ul></ul>',
-  magic: `ul([li('listitem 1'),
-li(['listitem 2',
-ul([li('listitem 2 subitem 1'),
-li('listitem 2 subitem 2')])])])`
+  magic: `ul([li('listitem 1'),li(['listitem 2',ul([li('listitem 2 subitem 1'),li('listitem 2 subitem 2')])])])`
 }
 
 export const ulSingle = {
@@ -108,4 +100,25 @@ export const htmlModule = {
   md: '<ModuleName arg="testing">children</ModuleName>',
   html: '<ModuleName arg="testing">children</ModuleName>',
   magic: `ModuleName({ arg: 'testing' }, 'children')`,
+}
+
+export const simpleSvg = {
+  input: '<svg><g></g></svg>',
+  expect: 'svg(g())',
+}
+
+export const fillStrokeTestSvg = {
+  input: '<svg><g fill-stroke="green"></g></svg>',
+  expect: "svg(g({ fillStroke: 'green' }))",
+}
+
+export const complexSvg = {
+  input: `
+<svg
+viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1"
+><g><path d="M32 0 32" /></g>
+`,
+  expect: `
+svg({ viewBox: '0 0 16 16', fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: '1' }, g(path({ d: 'M32 0 32' })))
+`.trim()
 }
