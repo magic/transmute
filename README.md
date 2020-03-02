@@ -130,10 +130,13 @@ state keys in ${} and {{ }} get trimmed... doh.
 return originalState, which is the state derived from the markdown/html file.
 this allows @magic to use this state for individual pages when building them.
 
-##### 0.0.13 - unreleased
+##### 0.0.14
 * nested state variables in template strings eg {{state.test.deep.var}} now work.
+* replace parse5 with posthtml.
+* custom markdown and custom html renderers added.
+* @magic-modules in markdown and html can have keys that are arrays or objects now.
 
-##### 0.0.14 - unreleased
+##### 0.0.15 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
