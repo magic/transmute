@@ -30,18 +30,5 @@ it is used internally to, for example, add the title and meta rel="description" 
 
 renders
 
-<MarkdownEmbed state>
-</MarkdownEmbed>
+<MarkdownEmbed state array="['arr1', 'arr2', 'arr3']" object="{ key1: 'value1', key2: 'value2' }"></MarkdownEmbed>
 
-
-the state looks like the following:
-
-```
-\-\-\-
-@state
-{
-  "title": "markdown file example",
-  "description": "markdown file description"
-}
-\-\-\-
-```
