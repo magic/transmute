@@ -4,7 +4,7 @@ import is from '@magic/types'
 import { stringDecode } from '../lib/index.mjs'
 
 const handleContent = content => {
-  if (!content) {
+  if (is.empty(content)) {
     return ''
   }
 
