@@ -1,8 +1,6 @@
 import marked from 'marked'
 import helpers from 'marked/src/helpers.js'
 
-import { stringDecode } from '../stringDecode.mjs'
-
 const { escape } = helpers
 
 export const markdown = new marked.Renderer()
@@ -130,7 +128,3 @@ markdown.paragraph = text => {
 }
 
 markdown.strong = text => `<b>${text}</b>`
-
-markdown.text = text => {
-  return stringDecode(text)
-}
