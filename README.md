@@ -142,7 +142,10 @@ this allows @magic to use this state for individual pages when building them.
 ##### 0.0.15
 if the value of a ${state.variable} in a template string is an array, this array gets join(' ')ed
 
-##### 0.0.16 - unreleased
+##### 0.0.16
+render/html: empty arrays and objects return an empty string.
+
+##### 0.0.17 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
