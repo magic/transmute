@@ -16,7 +16,7 @@ export const state = config => ({
 
   menu: [
     {
-      to: '/#installation',
+      to: '/#install',
       text: 'installation',
       items: [
         { to: '-cli', text: 'install cli' },
@@ -24,8 +24,8 @@ export const state = config => ({
       ],
     },
     {
-      to: '/#usage-cli',
-      text: 'usage cli',
+      to: '/#use-cli',
+      text: 'use cli',
       items: [
         { to: '-commands', text: 'cli commands' },
         { to: '-flags', text: 'cli flags' },
@@ -37,8 +37,8 @@ export const state = config => ({
       ],
     },
     {
-      to: '/#usage-api',
-      text: 'usage api',
+      to: '/#use-api',
+      text: 'use api',
       items: [{ to: '-examples', text: 'examples' }],
     },
     { to: '/markdown/', text: 'markdown' },
