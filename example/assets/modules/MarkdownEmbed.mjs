@@ -13,7 +13,7 @@ export const View = ({ array = [], object, url }) =>
 
     h3('state'),
     p('The state is available in this module, if declared:'),
-        Pre(`
+    Pre(`
 <MarkdownEmbed state></MarkdownEmbed>
 `),
 
@@ -29,9 +29,8 @@ export const View = ({ array = [], object, url }) =>
 
     array.map(item => p(item)),
 
-
     h2('Pass an object'),
-        p('You can pass objects to @magic-module in markdown:'),
+    p('You can pass objects to @magic-module in markdown:'),
 
     Pre(`
 <MarkdownEmbed state object="{ key1: 'value1', key2: 'value2' }"></MarkdownEmbed>
