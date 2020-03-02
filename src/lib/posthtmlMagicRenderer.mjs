@@ -16,10 +16,24 @@ const handleContent = content => {
   return content
 }
 
+const delimiters = ['"', "'", '`']
+
 const handleAttrs = attrs => {
   if (attrs) {
     attrs = Object.entries(attrs)
-      .map(([key, val]) => (!val ? key : `${key}: '${val}'`))
+      .map(([key, val]) => {
+        val = val.trim()
+
+        if (!val) {
+          return key
+        }
+
+        if (val.startsWith('[') || val.startsWith('{')) {
+          return `${key}: ${val}`
+        }
+
+        return `${key}: '${val}'`
+      })
       .filter(a => a)
       .join(', ')
 
