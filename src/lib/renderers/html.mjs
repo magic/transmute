@@ -1,6 +1,8 @@
 import cases from '@magic/cases'
 import is from '@magic/types'
 
+import { stringDecode } from '../stringDecode.mjs'
+
 const handleContent = content => {
   if (!content) {
     return ''
@@ -10,7 +12,12 @@ const handleContent = content => {
 
   if (is.array(content)) {
     if (content.length === 1) {
-      return html(content[0])
+      let cnt = content[0]
+      if (is.string(cnt)) {
+        cnt = stringDecode(cnt)
+      }
+
+      return html(cnt)
     }
 
     content = `[${content.map(html).filter(a => a)}]`
@@ -18,6 +25,10 @@ const handleContent = content => {
 
   if (!content) {
     content = ''
+  }
+
+  if (is.string(content)) {
+    return stringDecode(content)
   }
 
   return content
@@ -66,6 +77,8 @@ export const html = ast => {
       return ''
     }
 
+    ast = stringDecode(ast)
+
     if (ast.includes('\n')) {
       ast = '`' + ast.split('\n').join('\n') + '`'
     } else {
@@ -90,7 +103,7 @@ export const html = ast => {
 
     content = handleContent(content)
     if (is.string(content)) {
-      content = content.trim()
+      content = stringDecode(content).trim()
     }
 
     attrs = handleAttrs(attrs, tag)
