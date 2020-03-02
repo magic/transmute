@@ -139,7 +139,10 @@ this allows @magic to use this state for individual pages when building them.
 * custom markdown and custom html renderers added.
 * @magic-modules in markdown and html can have keys that are arrays or objects now.
 
-##### 0.0.15 - unreleased
+##### 0.0.15
+if the value of a ${state.variable} in a template string is an array, this array gets join(' ')ed
+
+##### 0.0.16 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
