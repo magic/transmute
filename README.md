@@ -145,7 +145,10 @@ if the value of a ${state.variable} in a template string is an array, this array
 ##### 0.0.16
 render/html: empty arrays and objects return an empty string.
 
-##### 0.0.17 - unreleased
+##### 0.0.17
+render/markdown.codespan: do not show linenumbers for codespans.
+
+##### 0.0.18 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
