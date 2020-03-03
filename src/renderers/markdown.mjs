@@ -21,7 +21,7 @@ markdown.code = (code, infostring, escaped) => {
   return `<Pre class="${lang}">${code}</Pre>`
 }
 
-markdown.codespan = text => `<Pre>${text}</Pre>`
+markdown.codespan = text => `<Pre lines="false">${text}</Pre>`
 
 markdown.link = (href, title, text) => {
   if (href === null) {
