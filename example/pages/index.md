@@ -83,19 +83,29 @@ and all @magic code uses native ecmascript modules without transpile step.
 ##### #use-api- examples
 
 ```
-import transmute from "@magic/transmute"
+import transmute from '@magic/transmute'
 
 // html to magic
-transmute.html("<a href="https://magic.github.io magic!</a>")
-// returns: Link({ to: "https://magic.github.io magic!")
+transmute.html('<a href="https://magic.github.io">magic!</a>')
+// returns: Link({ to: 'https://magic.github.io' }, 'magic!')
 
 // markdown to magic
 transmute.markdown("[magic!](https://magic.github.io)")
-// returns: Link({ to: "https://magic.github.io magic!")
+// returns: Link({ to: 'https://magic.github.io' }, 'magic!')
 
 const magic = transmute.markdown("[magic!](https://magic.github.io)")
 console.log(magic)
-// logs: Link({ to: "https://magic.github.io magic!")
+// logs: Link({ to: 'https://magic.github.io' }, 'magic!')
 
 // that's it.
+```
+
+##### escaping
+
+just some special character escaping tests
+
+`\'\' "string" &auml; &laquo; &Ouml;`
+
+```
+' "
 ```
