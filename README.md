@@ -148,7 +148,11 @@ render/html: empty arrays and objects return an empty string.
 ##### 0.0.17
 render/markdown.codespan: do not show linenumbers for codespans.
 
-##### 0.0.18 - unreleased
+##### 0.0.18
+* handle &quot; escapes correctly
+* string delimiters ', " AND ` in a string do not error, get escaped instead.
+
+##### 0.0.19 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
