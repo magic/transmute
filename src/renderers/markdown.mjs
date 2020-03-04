@@ -8,10 +8,6 @@ export const markdown = new marked.Renderer()
 markdown.code = (code, infostring, escaped) => {
   let lang = (infostring || '').match(/\S*/)[0]
 
-  if (!escaped) {
-    code = code.replace(/</g, '&lt;')
-  }
-
   if (!lang) {
     return `<Pre>${code}</Pre>\n`
   }
