@@ -80,18 +80,16 @@ export const html = ast => {
     ast = stringDecode(ast)
 
     if (ast.includes('\n')) {
-      ast = '`' + ast.split('\n').join('\n') + '`'
+      ast = '`' + ast + '`'
     } else {
-      if (!ast.includes("'") || !ast.replace("\\'", '').includes("'")) {
+      if (!ast.includes("'")) {
         ast = `'${ast}'`
       } else if (!ast.includes('"')) {
         ast = `"${ast}"`
       } else if (!ast.includes('`')) {
         ast = '`' + ast + '`'
       } else {
-        throw new Error(
-          'Invalid string found. Either do not use all three of ", ` and \', or escape one of them.',
-        )
+        ast = ast.split("'").map(a => a.endsWith('\\') ? a.substr(0, a.length - 1) : a).join("\\'")
       }
     }
 
@@ -102,13 +100,10 @@ export const html = ast => {
     let { tag, attrs, content } = ast
 
     content = handleContent(content)
-    if (is.string(content)) {
-      content = stringDecode(content).trim()
-    }
 
     attrs = handleAttrs(attrs, tag)
 
-    if (attrs && content) {
+    if (attrs && !is.empty(content)) {
       attrs += ', '
     }
 
@@ -126,6 +121,14 @@ export const html = ast => {
 
     if (tag === 'italic') {
       tag = 'em'
+    }
+
+    if (is.string(content)) {
+      content = stringDecode(content.trim())
+    }
+
+    if (is.empty(content)) {
+      content = ''
     }
 
     return `${tag}(${attrs}${content})`
