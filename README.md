@@ -155,7 +155,10 @@ render/markdown.codespan: do not show linenumbers for codespans.
 ##### 0.0.19
 * actually escape multiple html entities in a string, not just the first occurrence
 
-##### 0.0.20 - unreleased
+##### 0.0.20
+update dependencies
+
+##### 0.0.21 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
