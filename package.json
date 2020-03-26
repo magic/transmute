@@ -41,7 +41,7 @@
     "@magic/types": "0.1.11",
     "marked": "0.8.1",
     "posthtml-parser": "0.4.2",
-    "prettier": "2.0.1"
+    "prettier": "2.0.2"
   },
   "devDependencies": {
     "@magic-modules/gdpr": "0.0.14",
