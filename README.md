@@ -158,7 +158,10 @@ render/markdown.codespan: do not show linenumbers for codespans.
 ##### 0.0.20
 update dependencies
 
-##### 0.0.21 - unreleased
+##### 0.0.21
+update dependencies
+
+##### 0.0.22 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
