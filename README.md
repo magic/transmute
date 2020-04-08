@@ -161,7 +161,10 @@ update dependencies
 ##### 0.0.21
 update dependencies
 
-##### 0.0.22 - unreleased
+##### 0.0.22
+update prettier, @magic/cli
+
+##### 0.0.23 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
