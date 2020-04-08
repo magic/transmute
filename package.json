@@ -35,13 +35,13 @@
   },
   "dependencies": {
     "@magic/cases": "0.0.2",
-    "@magic/cli": "0.0.23",
+    "@magic/cli": "0.0.24",
     "@magic/entities": "0.0.2",
     "@magic/log": "0.1.4",
     "@magic/types": "0.1.11",
     "marked": "0.8.2",
     "posthtml-parser": "0.4.2",
-    "prettier": "2.0.2"
+    "prettier": "2.0.4"
   },
   "devDependencies": {
     "@magic-modules/gdpr": "0.0.15",
@@ -49,9 +49,9 @@
     "@magic-modules/light-switch": "0.0.5",
     "@magic-modules/pre": "0.0.7",
     "@magic-themes/docs": "0.0.6",
-    "@magic/core": "0.0.61",
-    "@magic/format": "0.0.7",
-    "@magic/test": "0.1.39"
+    "@magic/core": "0.0.66",
+    "@magic/format": "0.0.8",
+    "@magic/test": "0.1.41"
   },
   "keywords": [
     "magic",
