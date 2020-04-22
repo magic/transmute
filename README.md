@@ -164,7 +164,10 @@ update dependencies
 ##### 0.0.22
 update prettier, @magic/cli
 
-##### 0.0.23 - unreleased
+##### 0.0.23 
+Link and Img do not get wrapped in a paragraph (anymore)
+
+##### 0.0.24 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
