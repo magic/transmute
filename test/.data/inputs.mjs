@@ -34,8 +34,8 @@ export const h5 = {
 
 export const link = {
   md: '[a link](http://example.com)',
-  html: '<p><a href="http://example.com" text="a link"></a></p>',
-  magic: "p(Link({ to: 'http://example.com', text: 'a link' }))",
+  html: '<a href="http://example.com" text="a link"></a>',
+  magic: "Link({ to: 'http://example.com', text: 'a link' })",
 }
 
 export const code = {
@@ -93,7 +93,7 @@ export const img = {
 export const html = {
   md: '<a href="/testing">text</a>',
   html: '<a href="/testing">text</a>',
-  magic: `p(Link({ to: '/testing' }, 'text'))`,
+  magic: `Link({ to: '/testing' }, 'text')`,
 }
 
 export const htmlModule = {
