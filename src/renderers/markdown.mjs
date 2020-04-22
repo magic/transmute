@@ -111,7 +111,7 @@ markdown.paragraph = text => {
       .split(' ')[0]
       .split('>')[0]
 
-    const inlineTags = ['a', 'Link', 'img', 'Img', 'strong', 'b', 'i', 'em']
+    const inlineTags = ['a', 'img', 'strong', 'b', 'i', 'em']
 
     if (inlineTags.includes(tagName)) {
       return `<p>${text}</p>\n`
