@@ -1,6 +1,6 @@
 # ${state.title}
 
-<GitBadges project="magic/transmute"></GitBadges>
+<GitBadges project="@magic/transmute"></GitBadges>
 
 ${state.description}
 
