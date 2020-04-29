@@ -170,7 +170,10 @@ Link and Img do not get wrapped in a paragraph (anymore)
 ##### 0.0.24
 update marked and prettier
 
-##### 0.0.25 - unreleased
+##### 0.0.25
+update dependencies
+
+##### 0.0.26 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
