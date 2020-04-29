@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@magic/cases": "0.0.2",
-    "@magic/cli": "0.0.24",
+    "@magic/cli": "0.0.27",
     "@magic/entities": "0.0.2",
     "@magic/log": "0.1.4",
     "@magic/types": "0.1.11",
@@ -50,8 +50,8 @@
     "@magic-modules/pre": "0.0.7",
     "@magic-themes/docs": "0.0.6",
     "@magic/core": "0.0.69",
-    "@magic/format": "0.0.9",
-    "@magic/test": "0.1.43"
+    "@magic/format": "0.0.10",
+    "@magic/test": "0.1.44"
   },
   "keywords": [
     "magic",
