@@ -173,7 +173,11 @@ update marked and prettier
 ##### 0.0.25
 update dependencies
 
-##### 0.0.26 - unreleased
+##### 0.0.26 
+* bump required node version to 14.2.0
+* update dependencies
+
+##### 0.0.27 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
