@@ -164,7 +164,7 @@ update dependencies
 ##### 0.0.22
 update prettier, @magic/cli
 
-##### 0.0.23 
+##### 0.0.23
 Link and Img do not get wrapped in a paragraph (anymore)
 
 ##### 0.0.24
@@ -173,11 +173,15 @@ update marked and prettier
 ##### 0.0.25
 update dependencies
 
-##### 0.0.26 
+##### 0.0.26
 * bump required node version to 14.2.0
 * update dependencies
 
-##### 0.0.27 - unreleased
+##### 0.0.27
+* update dependencies
+* FIX: command line interface was broken.
+
+##### 0.0.28 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
