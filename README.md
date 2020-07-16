@@ -181,7 +181,11 @@ update dependencies
 * update dependencies
 * FIX: command line interface was broken.
 
-##### 0.0.28 - unreleased
+##### 0.0.28
+* update dependencies
+* move magic-modules/no-spy to devDependencies
+
+##### 0.0.29 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
