@@ -4,6 +4,7 @@ import fs from 'fs'
 import prettier from 'prettier'
 
 import log from '@magic/log'
+import is from '@magic/types'
 
 import transmute from '../index.mjs'
 
@@ -13,6 +14,14 @@ export const runCli = (html, isMarkdown, res) => {
     out = transmute.markdown(html)
   } else {
     out = transmute.html(html)
+  }
+
+  if (is.array(out.rendered)) {
+    if (out.rendered.length === 1) {
+      out.rendered = out.rendered[0]
+    } else {
+      out.rendered = `[${out.rendered.join(',')}]`
+    }
   }
 
   if (res.args.addWrapper) {
