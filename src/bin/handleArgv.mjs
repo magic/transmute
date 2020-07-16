@@ -3,7 +3,9 @@ import path from 'path'
 
 import log from '@magic/log'
 
-export const handleArgv = ({ cmds, argv }) => {
+export const handleArgv = sr => {
+  const { commands, args, argv } = sr
+
   if (!args.input && !args.str) {
     log.error('Input required', 'specify either --str or --input')
     process.exit()
@@ -12,7 +14,7 @@ export const handleArgv = ({ cmds, argv }) => {
   let html = ''
   let isMarkdown = false
 
-  if (cmds.file) {
+  if (commands.file) {
     if (!args.input) {
       log.error('--input file required.')
       process.exit()
@@ -31,8 +33,8 @@ export const handleArgv = ({ cmds, argv }) => {
     if (markdownExtensions.includes(ext)) {
       isMarkdown = true
     }
-  } else if (cmds.html || cmds.markdown) {
-    if (cmds.markdown) {
+  } else if (commands.html || commands.markdown) {
+    if (commands.markdown) {
       isMarkdown = true
     }
 
