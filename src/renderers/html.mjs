@@ -89,7 +89,10 @@ export const html = ast => {
       } else if (!ast.includes('`')) {
         ast = '`' + ast + '`'
       } else {
-        ast = ast.split("'").map(a => a.endsWith('\\') ? a.substr(0, a.length - 1) : a).join("\\'")
+        ast = ast
+          .split("'")
+          .map(a => (a.endsWith('\\') ? a.substr(0, a.length - 1) : a))
+          .join("\\'")
       }
     }
 

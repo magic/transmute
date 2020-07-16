@@ -106,10 +106,7 @@ markdown.html = html => {
 
 markdown.paragraph = text => {
   if (text.startsWith('<')) {
-    const tagName = text
-      .substr(1)
-      .split(' ')[0]
-      .split('>')[0]
+    const tagName = text.substr(1).split(' ')[0].split('>')[0]
 
     const inlineTags = ['a', 'img', 'strong', 'b', 'i', 'em']
 
