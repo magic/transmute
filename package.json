@@ -41,7 +41,7 @@
     "@magic/types": "0.1.13",
     "marked": "1.1.1",
     "posthtml-parser": "0.4.2",
-    "prettier": "2.0.5"
+    "prettier": "2.1.0"
   },
   "devDependencies": {
     "@magic-modules/git-badges": "0.0.10",
