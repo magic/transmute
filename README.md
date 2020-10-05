@@ -188,7 +188,10 @@ update dependencies
 ##### 0.0.29 
 update dependencies
 
-##### 0.0.30 - unreleased
+##### 0.0.30 
+update dependencies
+
+##### 0.0.31 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
