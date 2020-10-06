@@ -35,9 +35,9 @@
   },
   "dependencies": {
     "@magic/cases": "0.0.3",
-    "@magic/cli": "0.0.28",
+    "@magic/cli": "0.0.29",
     "@magic/entities": "0.0.4",
-    "@magic/log": "0.1.5",
+    "@magic/log": "0.1.6",
     "@magic/types": "0.1.13",
     "marked": "1.2.0",
     "posthtml-parser": "0.5.0",
