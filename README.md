@@ -198,7 +198,8 @@ update dependencies
 update dependencies
 
 ##### 0.0.33
-update dependencies
+* update dependencies
+* fix markdown html handling changes
 
 ##### 0.0.34 - unreleased
 ...
