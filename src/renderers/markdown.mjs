@@ -101,6 +101,10 @@ markdown.html = html => {
     html = html.replace('<a', '<Link').replace('</a>', '</Link>')
   }
 
+  if (html.startsWith('</a>')) {
+    html = html.replace('</a>', '</Link>')
+  }
+
   return html
 }
 
