@@ -201,7 +201,10 @@ update dependencies
 * update dependencies
 * fix markdown html handling changes
 
-##### 0.0.34 - unreleased
+##### 0.0.34 
+* update dependencies
+
+##### 0.0.35 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
