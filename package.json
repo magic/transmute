@@ -39,9 +39,9 @@
     "@magic/entities": "0.0.4",
     "@magic/log": "0.1.7",
     "@magic/types": "0.1.13",
-    "marked": "1.2.5",
+    "marked": "1.2.6",
     "posthtml-parser": "0.6.0",
-    "prettier": "2.2.0"
+    "prettier": "2.2.1"
   },
   "devDependencies": {
     "@magic-modules/git-badges": "0.0.10",
@@ -49,8 +49,8 @@
     "@magic-modules/no-spy": "0.0.5",
     "@magic-modules/pre": "0.0.9",
     "@magic-themes/docs": "0.0.11",
-    "@magic/core": "0.0.94",
-    "@magic/format": "0.0.19",
+    "@magic/core": "0.0.95",
+    "@magic/format": "0.0.20",
     "@magic/test": "0.1.58"
   },
   "keywords": [
