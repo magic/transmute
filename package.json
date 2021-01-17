@@ -34,11 +34,11 @@
     "calls": "calls"
   },
   "dependencies": {
-    "@magic/cases": "0.0.3",
-    "@magic/cli": "0.0.30",
-    "@magic/entities": "0.0.4",
-    "@magic/log": "0.1.7",
-    "@magic/types": "0.1.13",
+    "@magic/cases": "0.0.4",
+    "@magic/cli": "0.0.31",
+    "@magic/entities": "0.0.5",
+    "@magic/log": "0.1.8",
+    "@magic/types": "0.1.14",
     "marked": "1.2.7",
     "posthtml-parser": "0.6.0",
     "prettier": "2.2.1"
