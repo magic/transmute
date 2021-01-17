@@ -210,7 +210,11 @@ update dependencies
 ##### 0.0.36 
 update dependencies
 
-##### 0.0.37 - unreleased
+##### 0.0.37
+* bump required node version to 14.15.4
+* update dependencies
+
+##### 0.0.38 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
