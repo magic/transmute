@@ -39,7 +39,7 @@
     "@magic/entities": "0.0.5",
     "@magic/log": "0.1.8",
     "@magic/types": "0.1.14",
-    "marked": "1.2.7",
+    "marked": "1.2.8",
     "posthtml-parser": "0.6.0",
     "prettier": "2.2.1"
   },
@@ -49,9 +49,9 @@
     "@magic-modules/no-spy": "0.0.6",
     "@magic-modules/pre": "0.0.10",
     "@magic-themes/docs": "0.0.12",
-    "@magic/core": "0.0.101",
-    "@magic/format": "0.0.20",
-    "@magic/test": "0.1.59"
+    "@magic/core": "0.0.102",
+    "@magic/format": "0.0.21",
+    "@magic/test": "0.1.60"
   },
   "keywords": [
     "magic",
