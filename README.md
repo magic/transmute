@@ -214,7 +214,10 @@ update dependencies
 * bump required node version to 14.15.4
 * update dependencies
 
-##### 0.0.38 - unreleased
+##### 0.0.38 
+update dependencies
+
+##### 0.0.39 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
