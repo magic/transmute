@@ -39,7 +39,7 @@
     "@magic/entities": "0.0.5",
     "@magic/log": "0.1.8",
     "@magic/types": "0.1.14",
-    "marked": "1.2.8",
+    "marked": "2.0.0",
     "posthtml-parser": "0.6.0",
     "prettier": "2.2.1"
   },
