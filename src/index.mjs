@@ -1,13 +1,11 @@
 import marked from 'marked'
-import PosthtmlParser from 'posthtml-parser'
+import posthtmlParser from 'posthtml-parser'
 
 import is from '@magic/types'
 
 import { findState, implantState } from './lib/index.mjs'
 
 import * as renderers from './renderers/index.mjs'
-
-const posthtmlParser = PosthtmlParser.default
 
 export const markdown = (string, state = {}, originalState = {}) => {
   const { input, state: st = {} } = findState(string)
@@ -44,7 +42,9 @@ export const html = (string, state = {}, originalState = {}) => {
 
   const implanted = implantState({ input: string, state })
 
-  const ast = posthtmlParser(implanted)
+  const parser = posthtmlParser.default ? posthtmlParser.default : posthtmlParser
+
+  const ast = parser(implanted)
 
   const out = renderers.html(ast)
 
