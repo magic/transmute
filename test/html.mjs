@@ -2,7 +2,6 @@ import { html } from '../src/index.mjs'
 
 import {
   h1,
-  h1Long,
   h2,
   h3,
   h4,
@@ -17,7 +16,6 @@ import {
   ul,
   ulSingle,
   htmlModule,
-  html as htmlLink,
   unescapeTest,
 } from './.data/inputs.mjs'
 
