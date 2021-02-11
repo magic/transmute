@@ -1,15 +1,13 @@
-import fs from 'fs'
-import path from 'path'
-
 import marked from 'marked'
-import posthtmlParser from 'posthtml-parser'
+import PosthtmlParser from 'posthtml-parser'
 
-import log from '@magic/log'
 import is from '@magic/types'
 
-import { escape, findState, implantState } from './lib/index.mjs'
+import { findState, implantState } from './lib/index.mjs'
 
 import * as renderers from './renderers/index.mjs'
+
+const posthtmlParser = PosthtmlParser.default
 
 export const markdown = (string, state = {}, originalState = {}) => {
   const { input, state: st = {} } = findState(string)
