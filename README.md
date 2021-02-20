@@ -223,7 +223,10 @@ update dependencies (marked)
 ##### 0.0.40
 update dependencies (posthtml-parser)
 
-##### 0.0.41 - unreleased
+##### 0.0.41
+remove call to undefined cleanUrl from markdown.image
+
+##### 0.0.42 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
