@@ -40,8 +40,6 @@ markdown.link = (href, title, text) => {
 }
 
 markdown.image = (href, title, text) => {
-  href = cleanUrl(this.options.sanitize, this.options.baseUrl, href)
-
   if (href === null) {
     return text
   }
