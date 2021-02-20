@@ -220,7 +220,10 @@ update dependencies
 ##### 0.0.39 
 update dependencies (marked)
 
-##### 0.0.40 - unreleased
+##### 0.0.40
+update dependencies (posthtml-parser)
+
+##### 0.0.41 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
