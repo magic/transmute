@@ -38,7 +38,7 @@
     "@magic/cli": "0.0.31",
     "@magic/entities": "0.0.5",
     "@magic/log": "0.1.8",
-    "@magic/types": "0.1.14",
+    "@magic/types": "0.1.15",
     "marked": "2.0.0",
     "posthtml-parser": "0.7.1",
     "prettier": "2.2.1"
