@@ -24,9 +24,9 @@ it is used internally to, for example, add the title and meta rel="description" 
 * [@magic-modules](https://magic-modules.github.io)
 * [@magic-themes](https://magic-themes.github.io)
 
-<a href="https://external.com">yay</a>
+<a href="https://jaeh.at">yay</a>
 
-<Link to="/testing" text="Whatcha gonna do?"></Link>
+<Link to="/" text="Whatcha gonna do?"></Link>
 
 renders
 
