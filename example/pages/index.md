@@ -52,7 +52,7 @@ file     - file to magic functions
 
 ##### #use-cli- transpile html string
 
-`magic-transmute html --str "<a href="https://magic.github.io magic!</a>"`
+`magic-transmute html --str "<a href="https://magic.github.io">magic!</a>"`
 
 ##### #use-cli- transpile markdown string
 
