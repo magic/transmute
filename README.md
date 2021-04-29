@@ -232,7 +232,10 @@ update dependencies
 * if the array returned by transmute has a length of 1, return that item instead
 * update dependencies
 
-##### 0.0.44 - unreleased
+##### 0.0.44
+do return arrays in all cases. adapt tests to accomodate for that
+
+##### 0.0.45 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
