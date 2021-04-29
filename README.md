@@ -228,7 +228,11 @@ remove call to undefined cleanUrl from markdown.image
 ##### 0.0.42 
 update dependencies
 
-##### 0.0.43 - unreleased
+##### 0.0.43
+* if the array returned by transmute has a length of 1, return that item instead
+* update dependencies
+
+##### 0.0.44 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
