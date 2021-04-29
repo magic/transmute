@@ -43,7 +43,7 @@ magic-transmute markdown --str '[a link](https://example.com)'',
 transpile html file:
 magic-transmute file --input input.html --output output.mjs
 
-transpile markdown file (.markdown and .md get recogniced):
+transpile markdown file (.markdown and .md get recognized):
 magic-transmute file --input input.md --output output.mjs
 
 transpile file as markdown (arbitrary file extensions)
