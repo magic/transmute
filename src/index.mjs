@@ -25,10 +25,6 @@ export const markdown = (string, state = {}, originalState = {}) => {
 
   const out = html(md, state, originalState)
 
-  if (is.array(out.rendered) && is.length(out.rendered, 1)) {
-    out.rendered = out.rendered[0]
-  }
-
   return out
 }
 
@@ -50,11 +46,7 @@ export const html = (string, state = {}, originalState = {}) => {
 
   const ast = parser(implanted)
 
-  let out = renderers.html(ast)
-
-  if (is.array(out) && is.length(out, 1)) {
-    out = out[0]
-  }
+  const out = renderers.html(ast)
 
   return { state, rendered: out, originalState }
 }
