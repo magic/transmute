@@ -235,7 +235,10 @@ update dependencies
 ##### 0.0.44
 do return arrays in all cases. adapt tests to accomodate for that
 
-##### 0.0.45 - unreleased
+##### 0.0.45 
+update dependencies
+
+##### 0.0.46 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
