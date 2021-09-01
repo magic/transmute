@@ -244,7 +244,10 @@ update dependencies to avoid circular dependencies in @magic/types
 ##### 0.0.47
 update dependencies
 
-##### 0.0.48 - unreleased
+##### 0.0.48
+update dependencies
+
+##### 0.0.49 - unreleased
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
