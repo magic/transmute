@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@magic/cases": "0.0.5",
-    "@magic/cli": "0.0.33",
+    "@magic/cli": "0.0.34",
     "@magic/entities": "0.0.7",
     "@magic/log": "0.1.10",
     "@magic/types": "0.1.16",
