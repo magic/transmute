@@ -1,5 +1,5 @@
 import marked from 'marked'
-import posthtmlParser from 'posthtml-parser'
+import { parser } from 'posthtml-parser'
 
 import is from '@magic/types'
 
@@ -41,8 +41,6 @@ export const html = (string, state = {}, originalState = {}) => {
   }
 
   const implanted = implantState({ input: string, state })
-
-  const parser = posthtmlParser.default ? posthtmlParser.default : posthtmlParser
 
   const ast = parser(implanted)
 
