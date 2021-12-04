@@ -1,18 +1,14 @@
-import marked from 'marked'
-import helpers from 'marked/src/helpers.js'
+import { Renderer } from 'marked'
+// import helpers from 'marked/src/helpers.js'
 
-const { escape } = helpers
+export const markdown = new Renderer()
 
-export const markdown = new marked.Renderer()
-
-markdown.code = (code, infostring, escaped) => {
+markdown.code = (code, infostring) => {
   let lang = (infostring || '').match(/\S*/)[0]
 
   if (!lang) {
     return `<Pre>${code}</Pre>\n`
   }
-
-  lang = escape(lang, true)
 
   return `<Pre class="${lang}">${code}</Pre>`
 }
@@ -24,7 +20,7 @@ markdown.link = (href, title, text) => {
     return text
   }
 
-  let out = `<Link to="${escape(href)}"`
+  let out = `<Link to="${href}"`
 
   if (title) {
     out += ` title="${title}"`

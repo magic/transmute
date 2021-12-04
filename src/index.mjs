@@ -1,4 +1,4 @@
-import marked from 'marked'
+import { marked } from 'marked'
 import { parser } from 'posthtml-parser'
 
 import is from '@magic/types'
