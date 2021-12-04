@@ -50,6 +50,12 @@ export const codeNoLang = {
   magic: ["Pre('code block')"],
 }
 
+export const codespan = {
+  md: '`code block`',
+  magic: ["Pre({ lines: 'false' }, 'code block')"],
+  html: '<Pre lines="false">code block</Pre>'
+}
+
 export const p = {
   md: 'paragraph',
   html: '<p>paragraph</p>',
@@ -87,7 +93,8 @@ export const ulSingle = {
 }
 
 export const img = {
-  md: '[/logo.png]',
+  md: '![Alt text](/path/to/img.jpg)',
+  magic: ["Img({ src: '/path/to/img.jpg', alt: 'Alt text' }, [])"],
 }
 
 export const html = {

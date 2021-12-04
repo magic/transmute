@@ -10,6 +10,7 @@ import {
   link,
   code,
   codeNoLang,
+  codespan,
   p,
   strong,
   italic,
@@ -19,6 +20,7 @@ import {
   html,
   htmlModule,
   unescapeTest,
+  img,
 } from './.data/inputs.mjs'
 
 export default [
@@ -44,6 +46,11 @@ export default [
     info: 'can handle code blocks without language',
   },
   {
+    fn: md(codespan.md).rendered,
+    expect: codespan.magic,
+    info: 'can handle code spans',
+  },
+  {
     fn: md(p.md).rendered,
     expect: p.magic,
     info: 'can handle paragraphs',
@@ -59,5 +66,10 @@ export default [
     fn: md(htmlModule.md, {}, ['ModuleName']).rendered,
     expect: htmlModule.magic,
     info: 'can handle magic modules',
+  },
+  {
+    fn: md(img.md).rendered,
+    expect: img.magic,
+    info: 'can handle images',
   },
 ]
