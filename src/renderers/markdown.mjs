@@ -1,7 +1,8 @@
 import { Renderer } from 'marked'
-// import helpers from 'marked/src/helpers.js'
 
 export const markdown = new Renderer()
+
+/* overwrite builtin markdown functions to use @magic modules */
 
 markdown.code = (code, infostring) => {
   let lang = (infostring || '').match(/\S*/)[0]
