@@ -35,12 +35,12 @@
     "calls": "calls"
   },
   "dependencies": {
-    "@magic/cases": "0.0.5",
-    "@magic/cli": "0.0.34",
-    "@magic/entities": "0.0.7",
-    "@magic/log": "0.1.10",
-    "@magic/types": "0.1.16",
-    "marked": "4.0.6",
+    "@magic/cases": "0.0.6",
+    "@magic/cli": "0.0.38",
+    "@magic/entities": "0.0.8",
+    "@magic/log": "0.1.13",
+    "@magic/types": "0.1.18",
+    "marked": "4.0.8",
     "posthtml-parser": "0.10.1",
     "prettier": "2.5.1"
   },
@@ -50,9 +50,9 @@
     "@magic-modules/no-spy": "0.0.6",
     "@magic-modules/pre": "0.0.11",
     "@magic-themes/docs": "0.0.14",
-    "@magic/core": "0.0.132",
-    "@magic/format": "0.0.33",
-    "@magic/test": "0.1.77"
+    "@magic/core": "0.0.133",
+    "@magic/format": "0.0.36",
+    "@magic/test": "0.2.2"
   },
   "keywords": [
     "magic",
