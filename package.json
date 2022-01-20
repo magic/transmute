@@ -40,8 +40,8 @@
     "@magic/entities": "0.0.8",
     "@magic/log": "0.1.13",
     "@magic/types": "0.1.18",
-    "marked": "4.0.8",
-    "posthtml-parser": "0.10.1",
+    "marked": "4.0.10",
+    "posthtml-parser": "0.10.2",
     "prettier": "2.5.1"
   },
   "devDependencies": {
@@ -50,9 +50,9 @@
     "@magic-modules/no-spy": "0.0.6",
     "@magic-modules/pre": "0.0.11",
     "@magic-themes/docs": "0.0.14",
-    "@magic/core": "0.0.133",
-    "@magic/format": "0.0.36",
-    "@magic/test": "0.2.2"
+    "@magic/core": "0.0.134",
+    "@magic/format": "0.0.37",
+    "@magic/test": "0.2.4"
   },
   "keywords": [
     "magic",
