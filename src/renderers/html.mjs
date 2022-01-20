@@ -34,8 +34,6 @@ const handleContent = content => {
   return content
 }
 
-const delimiters = ['"', "'", '`']
-
 const handleAttrs = (attrs, tag) => {
   if (attrs) {
     attrs = Object.entries(attrs)
