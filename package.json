@@ -36,10 +36,10 @@
   },
   "dependencies": {
     "@magic/cases": "0.0.8",
-    "@magic/cli": "0.0.42",
-    "@magic/entities": "0.0.11",
-    "@magic/log": "0.1.16",
-    "@magic/types": "0.1.21",
+    "@magic/cli": "0.0.43",
+    "@magic/entities": "0.0.12",
+    "@magic/log": "0.1.17",
+    "@magic/types": "0.1.22",
     "marked": "4.0.15",
     "posthtml-parser": "0.11.0",
     "prettier": "2.6.2"
@@ -50,8 +50,8 @@
     "@magic-modules/no-spy": "0.0.7",
     "@magic-modules/pre": "0.0.11",
     "@magic-themes/docs": "0.0.14",
-    "@magic/core": "0.0.141",
-    "@magic/format": "0.0.41",
+    "@magic/core": "0.0.142",
+    "@magic/format": "0.0.42",
     "@magic/test": "0.2.12"
   },
   "keywords": [
