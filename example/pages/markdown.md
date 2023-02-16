@@ -19,10 +19,10 @@ only tags valid in a html5 body, excluding script and style tags, are accepted.
 this markdown file also starts with a magic @state declaration.
 it is used internally to, for example, add the title and meta rel="description" tags to the head of this html file.
 
-* [@magic/core](https://magic.github.io)
-* [@magic-libraries](https://magic-libraries.github.io)
-* [@magic-modules](https://magic-modules.github.io)
-* [@magic-themes](https://magic-themes.github.io)
+- [@magic/core](https://magic.github.io)
+- [@magic-libraries](https://magic-libraries.github.io)
+- [@magic-modules](https://magic-modules.github.io)
+- [@magic-themes](https://magic-themes.github.io)
 
 <a href="https://jaeh.at">yay</a>
 
@@ -31,4 +31,3 @@ it is used internally to, for example, add the title and meta rel="description" 
 renders
 
 <MarkdownEmbed state array="['arr1', 'arr2', 'arr3']" object="{ key1: 'value1', key2: 'value2' }"></MarkdownEmbed>
-

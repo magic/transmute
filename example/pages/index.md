@@ -79,7 +79,6 @@ file     - file to magic functions
 the javascript api expects node version to be bigger or equal to 13.5.0
 and all @magic code uses native ecmascript modules without transpile step.
 
-
 ##### #use-api- examples
 
 ```

@@ -1,4 +1,5 @@
 ## @magic/transmute
+
 transmutes html and markdown to @magic view fragments
 
 [![NPM version][npm-image]][npm-url]
@@ -7,10 +8,10 @@ transmutes html and markdown to @magic view fragments
 [![Coverage Status][coveralls-image]][coveralls-url]
 [![Known Vulnerabilities][snyk-image]][snyk-url]
 
-
 ### installation
 
 #### cli:
+
 ```bash
 npm i -g @magic/transmute
 
@@ -19,6 +20,7 @@ magic-transmute
 ```
 
 #### javascript api
+
 ```bash
 npm i --save @magic/transmute
 ```
@@ -30,40 +32,47 @@ npm i --save @magic/transmute
 `magic-transmute --help`
 
 #### commands:
-* markdown - convert markdown to magic functions
-* html     - convert html to magic functions
-* file     - convert file to magic functions
+
+- markdown - convert markdown to magic functions
+- html - convert html to magic functions
+- file - convert file to magic functions
 
 #### flags:
-* --add-wrapper - add export default[] to the returned string. - alias: ["--addWrapper"]
-* --no-pretty   - do not run prettier. - alias: ["--noPretty"]
-* --markdown    - force markdown parser to run. - alias: ["--mark", "-m"]
-* --output      - output file path - alias: ["--out", "-o"]
-* --input       - input file path - alias: ["--in", "-i"]
-* --help        - this help text - alias: ["-help", "help", "--h", "-h"]
-* --str         - an input string of either html or markdown, depending on running command
+
+- --add-wrapper - add export default[] to the returned string. - alias: ["--addWrapper"]
+- --no-pretty - do not run prettier. - alias: ["--noPretty"]
+- --markdown - force markdown parser to run. - alias: ["--mark", "-m"]
+- --output - output file path - alias: ["--out", "-o"]
+- --input - input file path - alias: ["--in", "-i"]
+- --help - this help text - alias: ["-help", "help", "--h", "-h"]
+- --str - an input string of either html or markdown, depending on running command
 
 ##### transpile html string:
+
 `magic-transmute html --str '<a href="https://magic.github.io">magic!</a>'`
 
 ##### transpile markdown string:
+
 `magic-transmute markdown --str '[magic!](https://magic.github.io)'`
 
 ##### html file:
+
 `magic-transmute file --input input.html --output output.mjs`
 
 ##### markdown file
+
 (.markdown and .md get recognized):
 
 `magic-transmute file --input input.md --output output.mjs`
 
 ##### force markdown
+
 (arbitrary file extensions)
 
 `magic-transmute file --input input.txt --output output.mjs --markdown`
 
-
 #### api examples
+
 ```javascript
 import transmute from '@magic/transmute'
 
@@ -85,47 +94,60 @@ console.log(magic)
 #### changelog
 
 ##### 0.0.1
+
 first release
 
 ##### 0.0.2
+
 update dependencies
 
 ##### 0.0.3
+
 fix cli
 
 ##### 0.0.4
+
 update @magic dependencies to use npm packages instead of github
 
 ##### 0.0.5
-* extract state from html and markdown files
-* allow usage of state variables in markdown and html
+
+- extract state from html and markdown files
+- allow usage of state variables in markdown and html
 
 ##### 0.0.6
-* pass options from LexLex to marked.Lexer
-* only implant state in html if it has not been passed as argument
-* correctly camelCase object keys for html tags
-* correctly merge passed state with in-file state for markdown and html
+
+- pass options from LexLex to marked.Lexer
+- only implant state in html if it has not been passed as argument
+- correctly camelCase object keys for html tags
+- correctly merge passed state with in-file state for markdown and html
 
 ##### 0.0.7 - broken
+
 remove commonjs support, node >= 13.5.0 required
 
 ##### 0.0.8
+
 export correct cli file
 
 ##### 0.0.9
+
 do not lowercase @magic-module names, some other minor changes
 
 ##### 0.0.10
+
 do not wrap @magic-modules in p tags
 
 ##### 0.0.11
-* remove eval from state injection function.
-* correctly handle both ${} and {{}} variables in markdown and html files.
+
+- remove eval from state injection function.
+- correctly handle both ${} and {{}} variables in markdown and html files.
 
 ##### 0.0.12
+
 state keys in ${} and {{ }} get trimmed... doh.
 
 ##### 0.0.13
+
 return originalState, which is the state derived from the markdown/html file.
 this allows @magic to use this state for individual pages when building them.
 
@@ -133,145 +155,188 @@ this allows @magic to use this state for individual pages when building them.
 
 ##### FULL @magic-module api available from markdown.
 
-* nested state variables in template strings eg {{state.test.deep.var}} now work.
-* replace parse5 with posthtml.
-* custom markdown and custom html renderers added.
-* @magic-modules in markdown and html can have keys that are arrays or objects now.
+- nested state variables in template strings eg {{state.test.deep.var}} now work.
+- replace parse5 with posthtml.
+- custom markdown and custom html renderers added.
+- @magic-modules in markdown and html can have keys that are arrays or objects now.
 
 ##### 0.0.15
+
 if the value of a ${state.variable} in a template string is an array, this array gets join(' ')ed
 
 ##### 0.0.16
+
 render/html: empty arrays and objects return an empty string.
 
 ##### 0.0.17
+
 render/markdown.codespan: do not show linenumbers for codespans.
 
 ##### 0.0.18
-* handle &quot; escapes.
-* string delimiters ', " AND ` in a string do not error, get escaped instead.
+
+- handle &quot; escapes.
+- string delimiters ', " AND ` in a string do not error, get escaped instead.
 
 ##### 0.0.19
-* actually escape multiple html entities in a string, not just the first occurrence
+
+- actually escape multiple html entities in a string, not just the first occurrence
 
 ##### 0.0.20
+
 update dependencies
 
 ##### 0.0.21
+
 update dependencies
 
 ##### 0.0.22
+
 update prettier, @magic/cli
 
 ##### 0.0.23
+
 Link and Img do not get wrapped in a paragraph (anymore)
 
 ##### 0.0.24
+
 update marked and prettier
 
 ##### 0.0.25
+
 update dependencies
 
 ##### 0.0.26
-* bump required node version to 14.2.0
-* update dependencies
+
+- bump required node version to 14.2.0
+- update dependencies
 
 ##### 0.0.27
-* update dependencies
-* FIX: command line interface was broken.
+
+- update dependencies
+- FIX: command line interface was broken.
 
 ##### 0.0.28
-* update dependencies
-* move magic-modules/no-spy to devDependencies
 
-##### 0.0.29 
+- update dependencies
+- move magic-modules/no-spy to devDependencies
+
+##### 0.0.29
+
 update dependencies
 
-##### 0.0.30 
+##### 0.0.30
+
 update dependencies
 
 ##### 0.0.31
+
 update dependencies
 
-##### 0.0.32 
+##### 0.0.32
+
 update dependencies
 
 ##### 0.0.33
-* update dependencies
-* fix markdown html handling changes
 
-##### 0.0.34 
-* update dependencies
+- update dependencies
+- fix markdown html handling changes
 
-##### 0.0.35 
+##### 0.0.34
+
+- update dependencies
+
+##### 0.0.35
+
 update dependencies
 
-##### 0.0.36 
+##### 0.0.36
+
 update dependencies
 
 ##### 0.0.37
-* bump required node version to 14.15.4
-* update dependencies
 
-##### 0.0.38 
+- bump required node version to 14.15.4
+- update dependencies
+
+##### 0.0.38
+
 update dependencies
 
-##### 0.0.39 
+##### 0.0.39
+
 update dependencies (marked)
 
 ##### 0.0.40
+
 update dependencies (posthtml-parser)
 
 ##### 0.0.41
+
 remove call to undefined cleanUrl from markdown.image
 
-##### 0.0.42 
+##### 0.0.42
+
 update dependencies
 
 ##### 0.0.43
-* if the array returned by transmute has a length of 1, return that item instead
-* update dependencies
+
+- if the array returned by transmute has a length of 1, return that item instead
+- update dependencies
 
 ##### 0.0.44
+
 do return arrays in all cases. adapt tests to accomodate for that
 
-##### 0.0.45 
+##### 0.0.45
+
 update dependencies
 
 ##### 0.0.46
+
 update dependencies to avoid circular dependencies in @magic/types
 
 ##### 0.0.47
+
 update dependencies
 
 ##### 0.0.48
+
 update dependencies
 
-##### 0.0.49 
+##### 0.0.49
+
 update dependencies
 
 ##### 0.0.50
+
 update dependencies
 
 ##### 0.0.51
+
 update dependencies
 
 ##### 0.0.52
+
 update dependencies
 
 ##### 0.0.53
+
 update dependencies
 
 ##### 0.0.54
+
 update dependencies
 
 ##### 0.0.55
+
 update dependencies
 
 ##### 0.0.56
+
 update dependencies
 
 ##### 0.0.57 - unreleased
+
 ...
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
@@ -284,4 +349,3 @@ update dependencies
 [coveralls-url]: https://coveralls.io/github/magic/transmute
 [snyk-image]: https://snyk.io/test/github/magic/transmute/badge.svg
 [snyk-url]: https://snyk.io/test/github/magic/transmute
-
