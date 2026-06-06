@@ -5,10 +5,10 @@
   "homepage": "https://magic.github.io/transmute",
   "license": "AGPL-3.0",
   "description": "convert markdown and html to magic function strings.",
-  "main": "src/index.mjs",
+  "main": "src/index.js",
   "type": "module",
   "bin": {
-    "magic-transmute": "src/bin.mjs"
+    "magic-transmute": "src/bin.js"
   },
   "files": [
     "src"
@@ -31,13 +31,13 @@
     "build": "NODE_ENV=production magic build",
     "prod": "NODE_ENV=production magic build serve",
     "dev": "magic dev",
-    "dirty-cli-test": "src/bin/bin.js file --input test/.data/testing.md --output testing.mjs && echo 'contents: ' && cat testing.mjs && echo 'deleting testing.mjs' && rm testing.mjs",
+    "dirty-cli-test": "src/bin/bin.js file --input test/.data/testing.md --output testing.js && echo 'contents: ' && cat testing.js && echo 'deleting testing.js' && rm testing.js",
     "calls": "calls"
   },
   "dependencies": {
     "@magic/cases": "0.0.13",
     "@magic/cli": "0.0.53",
-    "@magic/entities": "0.0.16",
+    "@magic/entities": "0.0.17",
     "@magic/log": "0.1.22",
     "@magic/types": "0.1.37",
     "marked": "18.0.5",

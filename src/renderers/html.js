@@ -1,7 +1,7 @@
 import cases from '@magic/cases'
 import is from '@magic/types'
 
-import { stringDecode } from '../lib/index.mjs'
+import { stringDecode } from '../lib/index.js'
 
 const handleContent = content => {
   if (is.empty(content)) {
