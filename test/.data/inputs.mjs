@@ -53,7 +53,7 @@ export const codeNoLang = {
 export const codespan = {
   md: '`code block`',
   magic: ["Pre({ lines: 'false' }, 'code block')"],
-  html: '<Pre lines="false">code block</Pre>'
+  html: '<Pre lines="false">code block</Pre>',
 }
 
 export const p = {
@@ -64,8 +64,10 @@ export const p = {
 
 export const sentence = {
   md: "It's very easy to make some words **bold** and other words *italic* with Markdown. You can even [link!](http://example.com)",
-  html: "<p>It's very easy to make some words <strong>bold</strong> and other words <em>italic</em> with Markdown. You can even <a href=\"http://example.com\" text=\"link!\"></a>",
-  magic: [`p(["It's very easy to make some words ",b('bold'),' and other words ',em('italic'),' with Markdown. You can even ',Link({ to: 'http://example.com', text: 'link!' })])`],
+  html: '<p>It\'s very easy to make some words <strong>bold</strong> and other words <em>italic</em> with Markdown. You can even <a href="http://example.com" text="link!"></a>',
+  magic: [
+    `p(["It's very easy to make some words ",b('bold'),' and other words ',em('italic'),' with Markdown. You can even ',Link({ to: 'http://example.com', text: 'link!' })])`,
+  ],
 }
 
 export const strong = {
@@ -83,7 +85,9 @@ export const italic = {
 export const ul = {
   md: '* listitem 1\n* listitem 2\n  * listitem 2 subitem 1\n  * listitem 2 subitem 2',
   html: '<ul><li>listitem 1</li><li>listitem 2<ul><li>listitem 2 subitem 1</li><li>listitem 2 subitem 2</li></ul></ul>',
-  magic: [`ul([li('listitem 1'),li(['listitem 2',ul([li('listitem 2 subitem 1'),li('listitem 2 subitem 2')])])])`],
+  magic: [
+    `ul([li('listitem 1'),li(['listitem 2',ul([li('listitem 2 subitem 1'),li('listitem 2 subitem 2')])])])`,
+  ],
 }
 
 export const ulSingle = {
@@ -131,7 +135,9 @@ export const complexSvg = {
 viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1"
 ><g><path d="M32 0 32" /></g>
 `,
-  expect: [`
+  expect: [
+    `
 svg({ viewBox: '0 0 16 16', fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: '1' }, g(path({ d: 'M32 0 32' })))
-`.trim()]
+`.trim(),
+  ],
 }
