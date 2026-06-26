@@ -1,4 +1,4 @@
-import { findState } from '../../src/lib/index.mjs'
+import { findState } from '../../src/lib/index.js'
 
 const str = `
 ---

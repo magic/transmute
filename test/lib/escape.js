@@ -1,4 +1,4 @@
-import { escape } from '../../src/lib/index.mjs'
+import { escape } from '../../src/lib/index.js'
 
 export default [
   { fn: escape('test'), expect: 'test', info: 'simple string is unchanged' },

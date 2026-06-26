@@ -1,4 +1,4 @@
-import { html } from '../src/index.mjs'
+import { html } from '../src/index.js'
 
 import {
   h1,
@@ -17,7 +17,7 @@ import {
   ulSingle,
   htmlModule,
   unescapeTest,
-} from './.data/inputs.mjs'
+} from './.data/inputs.js'
 
 export default [
   { fn: html(h1.html).rendered, expect: h1.magic, info: 'can handle h1' },

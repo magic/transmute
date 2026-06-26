@@ -1,6 +1,6 @@
 import { is, version } from '@magic/test'
 
-import transmute, { html, markdown, md } from '../src/index.mjs'
+import transmute, { html, markdown, md } from '../src/index.js'
 
 const spec = {
   html: 'fn',

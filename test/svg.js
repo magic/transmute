@@ -1,6 +1,6 @@
-import { html } from '../src/index.mjs'
+import { html } from '../src/index.js'
 
-import { simpleSvg, fillStrokeTestSvg, complexSvg } from './.data/inputs.mjs'
+import { simpleSvg, fillStrokeTestSvg, complexSvg } from './.data/inputs.js'
 
 export default [
   { fn: html(simpleSvg.input).rendered, expect: simpleSvg.expect, info: 'simple svg works' },
