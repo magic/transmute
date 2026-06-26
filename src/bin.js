@@ -2,7 +2,7 @@
 
 import { cli } from '@magic/cli'
 
-import { handleArgv, runCli } from './bin/index.mjs'
+import { handleArgv, runCli } from './bin/index.js'
 
 const args = {
   options: [
@@ -41,13 +41,13 @@ transpile markdown string:
 magic-transmute markdown --str '[a link](https://example.com)'',
 
 transpile html file:
-magic-transmute file --input input.html --output output.mjs
+magic-transmute file --input input.html --output output.js
 
 transpile markdown file (.markdown and .md get recognized):
-magic-transmute file --input input.md --output output.mjs
+magic-transmute file --input input.md --output output.js
 
 transpile file as markdown (arbitrary file extensions)
-magic-transmute file --input input.txt --output output.mjs --markdown
+magic-transmute file --input input.txt --output output.js --markdown
 `,
   },
 }

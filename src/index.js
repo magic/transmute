@@ -3,9 +3,9 @@ import { parser } from 'posthtml-parser'
 
 import is from '@magic/types'
 
-import { findState, implantState } from './lib/index.mjs'
+import { findState, implantState } from './lib/index.js'
 
-import * as renderers from './renderers/index.mjs'
+import * as renderers from './renderers/index.js'
 
 export const markdown = (string, state = {}, originalState = {}) => {
   const { input, state: st = {} } = findState(string)

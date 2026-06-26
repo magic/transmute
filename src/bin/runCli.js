@@ -6,7 +6,7 @@ import prettier from 'prettier'
 import log from '@magic/log'
 import is from '@magic/types'
 
-import transmute from '../index.mjs'
+import transmute from '../index.js'
 
 export const runCli = (html, isMarkdown, res) => {
   let out

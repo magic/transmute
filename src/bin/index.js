@@ -1,2 +1,2 @@
-export { handleArgv } from './handleArgv.mjs'
-export { runCli } from './runCli.mjs'
+export { handleArgv } from './handleArgv.js'
+export { runCli } from './runCli.js'
