@@ -35,14 +35,14 @@
     "calls": "calls"
   },
   "dependencies": {
-    "@magic/cases": "0.0.13",
-    "@magic/cli": "0.0.54",
-    "@magic/entities": "0.0.17",
-    "@magic/log": "0.1.22",
-    "@magic/types": "0.1.37",
+    "@magic/cases": "0.0.14",
+    "@magic/cli": "0.0.55",
+    "@magic/entities": "0.0.18",
+    "@magic/log": "0.1.23",
+    "@magic/types": "0.1.38",
     "marked": "18.0.5",
     "posthtml-parser": "0.12.1",
-    "prettier": "3.8.5"
+    "prettier": "3.9.4"
   },
   "devDependencies": {
     "@magic-modules/git-badges": "0.0.12",
@@ -50,9 +50,9 @@
     "@magic-modules/no-spy": "0.0.9",
     "@magic-modules/pre": "0.0.12",
     "@magic-themes/docs": "0.0.15",
-    "@magic/core": "0.0.158",
-    "@magic/format": "0.0.74",
-    "@magic/test": "0.3.12"
+    "@magic/core": "0.0.159",
+    "@magic/format": "0.0.75",
+    "@magic/test": "0.3.23"
   },
   "keywords": [
     "magic",
