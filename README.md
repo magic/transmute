@@ -343,7 +343,11 @@ update dependencies
 
 - update dependencies
 
-##### 0.0.59 - unreleased
+##### 0.0.59
+
+- update dependencies
+
+##### 0.0.60 - unreleased
 
 ...
 
