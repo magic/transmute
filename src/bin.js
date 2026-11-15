@@ -29,7 +29,6 @@ const args = {
       '--no-pretty': 'do not run prettier.',
       '--markdown': 'force markdown parser to run.',
       '--input': 'input file path',
-      '--output': 'output file path',
       '--help': 'this help text',
       '--str': 'an input string of either html or markdown, depending on running command',
     },
