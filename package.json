@@ -32,7 +32,10 @@
     "prod": "NODE_ENV=production magic build serve",
     "dev": "magic dev",
     "dirty-cli-test": "src/bin/bin.js file --input test/.data/testing.md --output testing.js && echo 'contents: ' && cat testing.js && echo 'deleting testing.js' && rm testing.js",
-    "calls": "calls"
+    "lint": "lint",
+    "tsc": "tsc --noEmit",
+    "tsc:test": "tsc --noEmit -p tsconfig.test.json",
+    "check": "npm run tsc && npm run tsc:test && npm run lint"
   },
   "dependencies": {
     "@magic/cases": "0.0.15",
@@ -52,6 +55,7 @@
     "@magic-themes/docs": "0.0.15",
     "@magic/core": "0.0.161",
     "@magic/format": "0.0.79",
+    "@magic/lint": "0.0.5",
     "@magic/test": "0.3.56"
   },
   "keywords": [
