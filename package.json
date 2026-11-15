@@ -1,29 +1,37 @@
 {
   "name": "@magic/transmute",
   "version": "0.0.59",
-  "author": "Wizards & Witches",
-  "homepage": "https://magic.github.io/transmute",
-  "license": "AGPL-3.0",
   "description": "convert markdown and html to magic function strings.",
-  "main": "src/index.js",
-  "type": "module",
+  "keywords": [
+    "html",
+    "magic",
+    "markdown",
+    "transmute"
+  ],
+  "homepage": "https://magic.github.io/transmute",
+  "bugs": {
+    "url": "https://github.com/magic/transmute/issues"
+  },
+  "license": "AGPL-3.0",
+  "author": "Wizards & Witches",
+  "contributors": [
+    {
+      "name": "jascha ehrenreich",
+      "github": "jaeh"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magic/transmute.git"
+  },
   "bin": {
     "magic-transmute": "src/bin.js"
   },
   "files": [
     "src"
   ],
-  "engines": {
-    "node": ">=14.15.4"
-  },
-  "engineStrict": true,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/magic/transmute.git"
-  },
-  "bugs": {
-    "url": "https://github.com/magic/transmute/issues"
-  },
+  "type": "module",
+  "main": "src/index.js",
   "scripts": {
     "start": "t -p",
     "test": "t",
@@ -58,18 +66,10 @@
     "@magic/lint": "0.0.5",
     "@magic/test": "0.3.56"
   },
-  "keywords": [
-    "magic",
-    "transmute",
-    "html",
-    "markdown"
-  ],
-  "contributors": [
-    {
-      "name": "jascha ehrenreich",
-      "github": "jaeh"
-    }
-  ],
+  "engines": {
+    "node": ">=14.15.4"
+  },
+  "engineStrict": true,
   "allowScripts": {
     "@swc/core@1.15.47": true
   }
