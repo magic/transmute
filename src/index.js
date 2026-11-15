@@ -7,6 +7,15 @@ import { findState, implantState } from './lib/index.js'
 
 import * as renderers from './renderers/index.js'
 
+/**
+ * @typedef {Record<string, unknown>} State
+ */
+
+/**
+ * @param {string} string
+ * @param {State} [state]
+ * @param {object} [originalState]
+ */
 export const markdown = (string, state = {}, originalState = {}) => {
   const { input, state: st = {} } = findState(string)
 
@@ -21,13 +30,18 @@ export const markdown = (string, state = {}, originalState = {}) => {
   }
 
   const implanted = implantState({ input: string, state })
-  let md = marked(implanted, { renderer: renderers.markdown })
+  const md = marked(implanted, { renderer: renderers.markdown, async: false })
 
   const out = html(md, state, originalState)
 
   return out
 }
 
+/**
+ * @param {string} string
+ * @param {State} [state]
+ * @param {object} [originalState]
+ */
 export const html = (string, state = {}, originalState = {}) => {
   const { input, state: st = {} } = findState(string)
 

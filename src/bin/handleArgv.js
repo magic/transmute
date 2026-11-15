@@ -3,6 +3,10 @@ import path from 'path'
 
 import log from '@magic/log'
 
+/**
+ * @param {import('@magic/cli').ParsedCLI} sr
+ * @returns {[string, boolean]}
+ */
 export const handleArgv = sr => {
   const { commands, args, argv } = sr
 

@@ -4,8 +4,9 @@ export const markdown = new Renderer()
 
 // Slugger implementation (removed from marked v5+)
 // No deduplication - reset state for each slugify call
+/** @param {string} str */
 const slugify = str => {
-  let s = str
+  const s = str
     .toLowerCase()
     .trim()
     .replace(/[\s]+/g, '-')
@@ -18,9 +19,9 @@ const slugify = str => {
 
 /* overwrite builtin markdown functions to use @magic modules */
 
-markdown.code = token => {
+markdown.code = (/** @type {import('marked').Tokens.Code} */ token) => {
   const { text, lang } = token
-  const language = (lang || '').match(/\S*/)[0]
+  const language = (lang || '').match(/\S*/)?.[0]
 
   if (!language) {
     return `<Pre>${text}</Pre>\n`
@@ -29,9 +30,10 @@ markdown.code = token => {
   return `<Pre class="${language}">${text}</Pre>`
 }
 
-markdown.codespan = token => `<Pre lines="false">${token.text}</Pre>`
+markdown.codespan = (/** @type {import('marked').Tokens.Codespan} */ token) =>
+  `<Pre lines="false">${token.text}</Pre>`
 
-markdown.link = token => {
+markdown.link = (/** @type {import('marked').Tokens.Link} */ token) => {
   const { href, title, text } = token
   if (href === null) {
     return text
@@ -52,7 +54,7 @@ markdown.link = token => {
   return out
 }
 
-markdown.image = token => {
+markdown.image = (/** @type {import('marked').Tokens.Image} */ token) => {
   const { href, title, text } = token
   if (href === null) {
     return text
@@ -73,13 +75,16 @@ markdown.image = token => {
   return out
 }
 
-markdown.heading = token => {
-  let { text, depth } = token
+markdown.heading = (/** @type {import('marked').Tokens.Heading} */ token) => {
+  let { text } = token
+  const depth = token.depth
   let id = slugify(text)
   let cssClass = ''
 
   if (text.startsWith('#')) {
-    let [setId, ...t] = text.split(' ')
+    const parts = text.split(' ')
+    let setId = parts[0]
+    const t = parts.slice(1)
 
     text = t.join(' ')
 
@@ -91,7 +96,9 @@ markdown.heading = token => {
   }
 
   if (text.startsWith('.')) {
-    let [setClass, ...t] = text.split(' ')
+    const parts = text.split(' ')
+    let setClass = parts[0]
+    const t = parts.slice(1)
 
     text = t.join(' ')
 
@@ -105,7 +112,9 @@ markdown.heading = token => {
   return `<h${depth} id="${id}"${cssClass}>${text}</h${depth}>\n`
 }
 
-markdown.html = token => {
+markdown.html = (
+  /** @type {import('marked').Tokens.HTML | import('marked').Tokens.Tag} */ token,
+) => {
   let html = token.text || token.raw
   if (html.startsWith('<img')) {
     html = html.replace('<img', '<Img')
@@ -122,8 +131,9 @@ markdown.html = token => {
   return html
 }
 
-markdown.paragraph = token => {
+markdown.paragraph = (/** @type {import('marked').Tokens.Paragraph} */ token) => {
   const text = token.text || ''
+  /** @type {import('marked').Tokens.Generic[]} */
   const inlineTokens = token.tokens || []
 
   // Check if single token that shouldn't be wrapped in <p>
@@ -131,14 +141,20 @@ markdown.paragraph = token => {
     const t = inlineTokens[0]
     if (t.type === 'link') {
       let out = `<Link to="${t.href}"`
-      if (t.title) out += ` title="${t.title}"`
+      if (t.title) {
+        out += ` title="${t.title}"`
+      }
       out += ` text="${t.text}"></Link>`
       return out + '\n'
     }
     if (t.type === 'image') {
       let out = `<Img src="${t.href}"`
-      if (t.text) out += ` alt="${t.text}"`
-      if (t.title) out += ` title="${t.title}"`
+      if (t.text) {
+        out += ` alt="${t.text}"`
+      }
+      if (t.title) {
+        out += ` title="${t.title}"`
+      }
       return out + '/>\n'
     }
     if (t.type === 'codespan') {
@@ -174,17 +190,22 @@ markdown.paragraph = token => {
   }
 
   // Render inline tokens
-  const renderInline = tokens => {
+  /** @returns {string} */
+  const renderInline = (/** @type {import('marked').Tokens.Generic[]} */ tokens) => {
     return tokens
       .map(t => {
         if (t.type === 'link') {
           let out = `<Link to="${t.href}"`
-          if (t.title) out += ` title="${t.title}"`
+          if (t.title) {
+            out += ` title="${t.title}"`
+          }
           out += ` text="${t.text}"></Link>`
           return out
         }
         if (t.type === 'strong' || t.type === 'em') {
-          const inner = t.tokens ? renderInline(t.tokens) : t.text
+          const inner = t.tokens
+            ? renderInline(/** @type {import('marked').Tokens.Generic[]} */ t.tokens)
+            : t.text
           const tag = t.type === 'strong' ? 'b' : 'em'
           return `<${tag}>${inner}</${tag}>`
         }
@@ -193,8 +214,12 @@ markdown.paragraph = token => {
         }
         if (t.type === 'image') {
           let out = `<Img src="${t.href}"`
-          if (t.text) out += ` alt="${t.text}"`
-          if (t.title) out += ` title="${t.title}"`
+          if (t.text) {
+            out += ` alt="${t.text}"`
+          }
+          if (t.title) {
+            out += ` title="${t.title}"`
+          }
           out += '/>'
           return out
         }
@@ -219,4 +244,4 @@ markdown.paragraph = token => {
   return `<p>${rendered}</p>\n`
 }
 
-markdown.strong = token => `<b>${token.text}</b>`
+markdown.strong = (/** @type {import('marked').Tokens.Strong} */ token) => `<b>${token.text}</b>`

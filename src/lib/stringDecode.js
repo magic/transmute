@@ -1,5 +1,6 @@
 import entities from '@magic/entities'
 
+/** @param {string} str */
 export const stringDecode = str => {
   entities.forEach(([num, symbol, name]) => {
     if (symbol) {

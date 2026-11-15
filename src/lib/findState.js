@@ -1,4 +1,8 @@
 // find and extract the page state from both markdown and html vars.
+/**
+ * @param {string} input
+ * @returns {{ input: string, state?: Record<string, unknown> }}
+ */
 export const findState = input => {
   if (input.trim().startsWith('---')) {
     const splinters = input.split('---')

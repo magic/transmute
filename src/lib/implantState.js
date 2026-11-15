@@ -2,6 +2,10 @@ import is from '@magic/types'
 
 const bracketRegExp = /(\${|{{).*(}|}})/gim
 
+/**
+ * @param {{ input: string, state: Record<string, unknown> }} params
+ * @returns {string}
+ */
 export const implantState = ({ input, state }) => {
   const matches = input.match(bracketRegExp)
 
@@ -26,7 +30,9 @@ export const implantState = ({ input, state }) => {
 
         subMatches.forEach(subM => {
           if (is.undefined(curState[subM])) {
-            curState = curState[subM]
+            curState = /** @type {Record<string, unknown>} */ (
+              /** @type {unknown} */ (curState[subM])
+            )
             val = curState
           } else {
             val = undefined
@@ -46,7 +52,7 @@ export const implantState = ({ input, state }) => {
         val = val.join(' ')
       }
 
-      input = input.replace(match, val)
+      input = input.replace(match, /** @type {string} */ (val))
     })
   }
 

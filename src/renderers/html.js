@@ -3,16 +3,26 @@ import is from '@magic/types'
 
 import { stringDecode } from '../lib/index.js'
 
+/**
+ * @typedef {import('posthtml-parser').NodeTag} NodeTag
+ * @typedef {string | number | NodeTag} NodeValue
+ */
+
+/**
+ * @param {Array<NodeValue>} content
+ * @returns {string | Array<string>}
+ */
 const handleContent = content => {
   if (is.empty(content)) {
     return ''
   }
 
-  content = content.filter(a => (!is.string(a) ? a : a.trim()))
+  /** @type {Array<NodeValue> | string} */
+  let out = content.filter(a => (!is.string(a) ? a : a.trim()))
 
-  if (is.array(content)) {
-    if (content.length === 1) {
-      let cnt = content[0]
+  if (is.array(out)) {
+    if (out.length === 1) {
+      let cnt = out[0]
       if (is.string(cnt)) {
         cnt = stringDecode(cnt)
       }
@@ -20,55 +30,63 @@ const handleContent = content => {
       return html(cnt)
     }
 
-    content = `[${content.map(html).filter(a => a)}]`
+    out = `[${out.map(html).filter(a => a)}]`
   }
 
-  if (!content) {
-    content = ''
+  if (!out) {
+    out = ''
   }
 
-  if (is.string(content)) {
-    return stringDecode(content)
+  if (is.string(out)) {
+    return stringDecode(out)
   }
 
-  return content
+  return out
 }
 
+/**
+ * @param {Record<string, string | number | boolean> | undefined} attrs
+ * @param {string | boolean | undefined} tag
+ * @returns {string}
+ */
 const handleAttrs = (attrs, tag) => {
-  if (attrs) {
-    attrs = Object.entries(attrs)
-      .map(([key, val]) => {
-        val = val.trim()
-
-        if (tag === 'a' || tag === 'Link') {
-          if (key === 'href') {
-            key = 'to'
-          }
-        }
-
-        key = cases.camel(key)
-
-        if (!val) {
-          return key
-        }
-
-        if (val.startsWith('[') || val.startsWith('{')) {
-          return `${key}: ${val}`
-        }
-
-        return `${key}: '${val}'`
-      })
-      .filter(a => a)
-      .join(', ')
-
-    attrs = `{ ${attrs} }`
-  } else {
-    attrs = ''
+  if (!attrs) {
+    return ''
   }
 
-  return attrs
+  const out = Object.entries(attrs)
+    .map(([key, rawVal]) => {
+      const val = /** @type {string} */ (rawVal)
+      const trimmed = val.trim()
+
+      let outKey = key
+
+      if ((tag === 'a' || tag === 'Link') && outKey === 'href') {
+        outKey = 'to'
+      }
+
+      outKey = cases.camel(outKey)
+
+      if (!trimmed) {
+        return outKey
+      }
+
+      if (trimmed.startsWith('[') || trimmed.startsWith('{')) {
+        return `${outKey}: ${trimmed}`
+      }
+
+      return `${outKey}: '${trimmed}'`
+    })
+    .filter(a => a)
+    .join(', ')
+
+  return `{ ${out} }`
 }
 
+/**
+ * @param {NodeValue | Array<NodeValue>} ast
+ * @returns {string | Array<string>}
+ */
 export const html = ast => {
   if (is.string(ast)) {
     if (!ast.trim()) {
@@ -98,11 +116,13 @@ export const html = ast => {
   }
 
   if (is.objectNative(ast)) {
-    let { tag, attrs, content } = ast
+    const node = /** @type {NodeTag} */ (ast)
+    let { tag } = node
+    const rawContent = node.content
 
-    content = handleContent(content)
+    let content = handleContent(/** @type {Array<NodeValue>} */ (rawContent))
 
-    attrs = handleAttrs(attrs, tag)
+    let attrs = handleAttrs(node.attrs, tag)
 
     if (attrs && !is.empty(content)) {
       attrs += ', '
@@ -135,5 +155,8 @@ export const html = ast => {
     return `${tag}(${attrs}${content})`
   }
 
-  return ast.map(html).filter(a => a)
+  const nodes = /** @type {Array<NodeValue>} */ (ast)
+  const out = /** @type {Array<string>} */ (nodes.map(html))
+
+  return out.filter(a => a)
 }
