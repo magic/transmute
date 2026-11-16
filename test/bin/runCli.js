@@ -52,7 +52,7 @@ export default [
   {
     fn: async () => runToFile('<p>hello</p>', false, {}),
     expect: "p('hello')\n",
-    info: 'pretty-prints output through prettier by default',
+    info: 'pretty-prints output through oxfmt by default',
   },
   {
     fn: async () => runToFile('<p>a</p><p>b</p>', false, { noPretty: true }),

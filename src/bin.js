@@ -26,7 +26,7 @@ const args = {
     options: {
       '--output': 'output file to write to',
       '--add-wrapper': 'add export default[] to the returned string.',
-      '--no-pretty': 'do not run prettier.',
+      '--no-pretty': 'do not run oxfmt.',
       '--markdown': 'force markdown parser to run.',
       '--input': 'input file path',
       '--help': 'this help text',

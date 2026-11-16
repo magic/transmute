@@ -42,7 +42,7 @@ file     - file to magic functions
 
 ```
 --add-wrapper - add export default[] to the returned string. - alias: ["--addWrapper"]
---no-pretty   - do not run prettier. - alias: ["--noPretty"]
+--no-pretty   - do not run oxfmt. - alias: ["--noPretty"]
 --markdown    - force markdown parser to run. - alias: ["--mark", "-m"]
 --output      - output file path - alias: ["--out", "-o"]
 --input       - input file path - alias: ["--in", "-i"]

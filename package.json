@@ -52,8 +52,8 @@
     "@magic/log": "0.1.26",
     "@magic/types": "0.1.42",
     "marked": "18.2.0",
-    "posthtml-parser": "0.13.0",
-    "prettier": "3.10.1"
+    "oxfmt": "0.78.0",
+    "posthtml-parser": "0.13.0"
   },
   "devDependencies": {
     "@magic-modules/git-badges": "0.0.12",

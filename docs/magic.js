@@ -25,7 +25,7 @@ magic-transmute`),f({id:"install-api"},"api"),J({lines:"false"},"npm i --save --
 both can be used in your projects.`),f({id:"use-cli"},"use cli"),J({lines:"false"},"magic-transmute --help"),f({id:"use-cli-commands"},"commands"),J(`markdown - convert markdown to magic functions
 html     - convert html to magic functions
 file     - file to magic functions`),f({id:"use-cli-flags"},"flags"),J(`--add-wrapper - add export default[] to the returned string. - alias: ["--addWrapper"]
---no-pretty   - do not run prettier. - alias: ["--noPretty"]
+--no-pretty   - do not run oxfmt. - alias: ["--noPretty"]
 --markdown    - force markdown parser to run. - alias: ["--mark", "-m"]
 --output      - output file path - alias: ["--out", "-o"]
 --input       - input file path - alias: ["--in", "-i"]

@@ -1,25 +1,27 @@
 import path from 'path'
 import fs from 'fs'
 
-import prettier from 'prettier'
+import { format } from 'oxfmt'
 
 import log from '@magic/log'
 import is from '@magic/types'
 
 import transmute from '../index.js'
 
-// prettier's format returns a promise, so the pretty path is async.
+// oxfmt's format returns a promise, so the pretty path is async.
 /**
  * @param {string} source
  * @returns {Promise<string>}
  */
-const formatCode = source =>
-  prettier.format(source, {
+const formatCode = async source => {
+  const result = await format('script.js', source, {
     semi: false,
-    parser: 'babel',
     singleQuote: true,
     trailingComma: 'es5',
   })
+
+  return result.code
+}
 
 /**
  * @param {string} html
