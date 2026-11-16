@@ -55,4 +55,4 @@ const res = cli(args)
 
 const [html, isMarkdown] = handleArgv(res)
 
-runCli(html, isMarkdown, res)
+await runCli(html, isMarkdown, res)

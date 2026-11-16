@@ -8,30 +8,25 @@ import is from '@magic/types'
 
 import transmute from '../index.js'
 
-// prettier's types only declare the async signature, but with the
-// built-in babel parser format resolves synchronously.
+// prettier's format returns a promise, so the pretty path is async.
 /**
  * @param {string} source
- * @returns {string}
+ * @returns {Promise<string>}
  */
-const formatSync = source =>
-  /** @type {string} */ (
-    /** @type {unknown} */ (
-      prettier.format(source, {
-        semi: false,
-        parser: 'babel',
-        singleQuote: true,
-        trailingComma: 'es5',
-      })
-    )
-  )
+const formatCode = source =>
+  prettier.format(source, {
+    semi: false,
+    parser: 'babel',
+    singleQuote: true,
+    trailingComma: 'es5',
+  })
 
 /**
  * @param {string} html
  * @param {boolean} isMarkdown
  * @param {import('@magic/cli').ParsedCLI} res
  */
-export const runCli = (html, isMarkdown, res) => {
+export const runCli = async (html, isMarkdown, res) => {
   const out = isMarkdown ? transmute.markdown(html) : transmute.html(html)
 
   let rendered = out.rendered
@@ -52,7 +47,7 @@ export const runCli = (html, isMarkdown, res) => {
   }
 
   if (!res.args.noPretty) {
-    outString = formatSync(outString)
+    outString = await formatCode(outString)
   }
 
   if (res.args.output) {
