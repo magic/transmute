@@ -33,15 +33,7 @@ const handleContent = content => {
     out = `[${out.map(html).filter(a => a)}]`
   }
 
-  if (!out) {
-    out = ''
-  }
-
-  if (is.string(out)) {
-    return stringDecode(out)
-  }
-
-  return out
+  return stringDecode(out)
 }
 
 /**
