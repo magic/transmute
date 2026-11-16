@@ -3,10 +3,6 @@
 transmutes html and markdown to @magic view fragments
 
 [![NPM version][npm-image]][npm-url]
-[![Linux Build Status][travis-image]][travis-url]
-[![Windows Build Status][appveyor-image]][appveyor-url]
-[![Coverage Status][coveralls-image]][coveralls-url]
-[![Known Vulnerabilities][snyk-image]][snyk-url]
 
 ### installation
 
@@ -353,11 +349,3 @@ update dependencies
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
 [npm-url]: https://www.npmjs.com/package/@magic/transmute
-[travis-image]: https://img.shields.io/travis/com/magic/transmute/master
-[travis-url]: https://travis-ci.com/magic/transmute
-[appveyor-image]: https://img.shields.io/appveyor/ci/magic/transmute/master.svg
-[appveyor-url]: https://ci.appveyor.com/project/magic/transmute/branch/master
-[coveralls-image]: https://coveralls.io/repos/github/magic/transmute/badge.svg
-[coveralls-url]: https://coveralls.io/github/magic/transmute
-[snyk-image]: https://snyk.io/test/github/magic/transmute/badge.svg
-[snyk-url]: https://snyk.io/test/github/magic/transmute
