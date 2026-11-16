@@ -343,9 +343,25 @@ update dependencies
 
 - update dependencies
 
-##### 0.0.60 - unreleased
+##### 0.0.60
 
-...
+- replace prettier with oxfmt in runCli
+- remove prettier dependency, add oxfmt 0.78.0
+- update help text and docs to say 'do not run oxfmt'
+- adjust test expectations for oxfmt
+- exclude docs and example/pages/html.html from package
+- add test coverage for state implantation through public API
+- add unit tests for html and markdown renderers
+- add tests for CLI argument handling, runCli and CLI itself
+- add tests for implantState and stringDecode
+- await oxfmt format in runCli
+- make tsc and oxlint happy
+- remove duplicate --output from CLI help
+- format example files
+- remove .travis and appveyor config files
+- format package.json
+- add @magic/lint, add npm run tasks for tsc and lint, add oxlint.config and tsconfig files
+- update multiple dependencies
 
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
 [npm-url]: https://www.npmjs.com/package/@magic/transmute
