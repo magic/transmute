@@ -99,6 +99,11 @@ export default [
     expect: 'it\\\'s "a" `b`',
     info: 'strings with all quote types fall back to escaping',
   },
+  {
+    fn: () => htmlRenderer('a\\\'b"c`d'),
+    expect: 'a\\\'b"c`d',
+    info: 'backslash before single quote escapes it',
+  },
   { fn: () => htmlRenderer(''), expect: '', info: 'empty string renders nothing' },
   { fn: () => htmlRenderer('   '), expect: '', info: 'whitespace-only string renders nothing' },
 
