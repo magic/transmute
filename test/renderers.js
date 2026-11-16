@@ -23,7 +23,14 @@ const linkToken = (href, text, title) => ({ type: 'link', raw: '', href, title, 
  * @param {string} title
  * @returns {import('marked').Tokens.Image}
  */
-const imageToken = (href, text, title) => ({ type: 'image', raw: '', href, title, text, tokens: [] })
+const imageToken = (href, text, title) => ({
+  type: 'image',
+  raw: '',
+  href,
+  title,
+  text,
+  tokens: [],
+})
 
 /**
  * @param {string} text
@@ -51,7 +58,7 @@ export default [
   },
   {
     fn: () => htmlRenderer([node('div', { 'data-obj': '{"a": 1}' }, ['x'])]),
-    expect: ["div({ dataObj: {\"a\": 1} }, 'x')"],
+    expect: ['div({ dataObj: {"a": 1} }, \'x\')'],
     info: 'object-like attribute values are not quoted',
   },
   {
@@ -79,7 +86,7 @@ export default [
   { fn: () => htmlRenderer('a\nb'), expect: '`a\nb`', info: 'newline strings use backticks' },
   {
     fn: () => htmlRenderer("it's"),
-    expect: "\"it's\"",
+    expect: '"it\'s"',
     info: 'single quote strings use double quotes',
   },
   {
@@ -89,7 +96,7 @@ export default [
   },
   {
     fn: () => htmlRenderer('it\'s "a" `b`'),
-    expect: "it\\'s \"a\" `b`",
+    expect: 'it\\\'s "a" `b`',
     info: 'strings with all quote types fall back to escaping',
   },
   { fn: () => htmlRenderer(''), expect: '', info: 'empty string renders nothing' },
@@ -137,7 +144,13 @@ export default [
     fn: () =>
       markdownRenderer.link(
         /** @type {import('marked').Tokens.Link} */ (
-          /** @type {unknown} */ ({ type: 'link', raw: '', href: null, text: 'no link', tokens: [] })
+          /** @type {unknown} */ ({
+            type: 'link',
+            raw: '',
+            href: null,
+            text: 'no link',
+            tokens: [],
+          })
         ),
       ),
     expect: 'no link',
@@ -260,7 +273,8 @@ export default [
     info: 'closing a tag is renamed to closing Link',
   },
   {
-    fn: () => markdownRenderer.html({ type: 'html', raw: '<br>', pre: false, block: false, text: '' }),
+    fn: () =>
+      markdownRenderer.html({ type: 'html', raw: '<br>', pre: false, block: false, text: '' }),
     expect: '<br>',
     info: 'html token without text falls back to raw',
   },
@@ -268,21 +282,23 @@ export default [
   // ---- renderers/markdown: paragraph single tokens ----
   {
     fn: () =>
-      markdownRenderer.paragraph(paragraphToken('[t](http://x.com)', [linkToken('http://x.com', 't', 'tt')])),
+      markdownRenderer.paragraph(
+        paragraphToken('[t](http://x.com)', [linkToken('http://x.com', 't', 'tt')]),
+      ),
     expect: '<Link to="http://x.com" title="tt" text="t"></Link>\n',
     info: 'single link paragraph token is not wrapped in p',
   },
   {
     fn: () =>
-      markdownRenderer.paragraph(paragraphToken('![a](/x.jpg)', [imageToken('/x.jpg', 'a', 'pic')])),
+      markdownRenderer.paragraph(
+        paragraphToken('![a](/x.jpg)', [imageToken('/x.jpg', 'a', 'pic')]),
+      ),
     expect: '<Img src="/x.jpg" alt="a" title="pic"/>\n',
     info: 'single image paragraph token is not wrapped in p',
   },
   {
     fn: () =>
-      markdownRenderer.paragraph(
-        paragraphToken('`c`', [{ type: 'codespan', raw: '', text: 'c' }]),
-      ),
+      markdownRenderer.paragraph(paragraphToken('`c`', [{ type: 'codespan', raw: '', text: 'c' }])),
     expect: '<Pre lines="false">c</Pre>\n',
     info: 'single codespan paragraph token is not wrapped in p',
   },
@@ -319,7 +335,9 @@ export default [
   {
     fn: () =>
       markdownRenderer.paragraph(
-        paragraphToken('<a href="/x">y</a>', [{ type: 'html', raw: '', text: '<a href="/x">y</a>' }]),
+        paragraphToken('<a href="/x">y</a>', [
+          { type: 'html', raw: '', text: '<a href="/x">y</a>' },
+        ]),
       ),
     expect: '<a href="/x">y</a>\n',
     info: 'single html paragraph token without raw falls back to text',
@@ -365,7 +383,12 @@ export default [
     fn: () =>
       markdownRenderer.paragraph(
         paragraphToken('mixed inline', [
-          { type: 'strong', raw: '', text: 'bold', tokens: [{ type: 'text', raw: '', text: 'bold' }] },
+          {
+            type: 'strong',
+            raw: '',
+            text: 'bold',
+            tokens: [{ type: 'text', raw: '', text: 'bold' }],
+          },
           { type: 'em', raw: '', text: 'em' },
           { type: 'codespan', raw: '', text: 'c' },
           imageToken('/x.jpg', 'a', 'pic'),

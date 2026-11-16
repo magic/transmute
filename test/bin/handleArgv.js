@@ -26,8 +26,7 @@ export default [
     info: 'html command with --str returns html input and isMarkdown false',
   },
   {
-    fn: () =>
-      handleArgv(cli({ commands: { markdown: true }, args: { str: ['hi there'] } })),
+    fn: () => handleArgv(cli({ commands: { markdown: true }, args: { str: ['hi there'] } })),
     expect: ['hi there', true],
     info: 'markdown command with --str returns markdown input and isMarkdown true',
   },
@@ -43,9 +42,7 @@ export default [
   },
   {
     fn: () => {
-      const out = handleArgv(
-        cli({ commands: { file: true }, args: { input: ['src/index.js'] } }),
-      )
+      const out = handleArgv(cli({ commands: { file: true }, args: { input: ['src/index.js'] } }))
       return [out[0] === readFile('src/index.js'), out[1]]
     },
     expect: [true, false],

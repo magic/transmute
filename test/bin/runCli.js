@@ -66,7 +66,7 @@ export default [
   },
   {
     fn: async () => runToFile('<p>hello</p>', false, { noPretty: true, addWrapper: true }),
-    expect: 'export default [\np(\'hello\'),\n]',
+    expect: "export default [\np('hello'),\n]",
     info: 'wraps output in an export default array when addWrapper is set',
   },
   {

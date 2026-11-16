@@ -9,7 +9,7 @@ export default [
   },
   {
     fn: () => stringDecode('<div>&lt; &#39; &#8968;</div>'),
-    expect: '<div>< \' ⌈</div>',
+    expect: "<div>< ' ⌈</div>",
     info: 'decodes entities within html',
   },
 ]
