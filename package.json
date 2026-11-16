@@ -35,7 +35,7 @@
   "scripts": {
     "start": "t -p",
     "test": "t",
-    "format": "f -w --exclude docs",
+    "format": "f -w '!docs' '!example/pages/html.html'",
     "build": "NODE_ENV=production magic build",
     "prod": "NODE_ENV=production magic build serve",
     "dev": "magic dev",
