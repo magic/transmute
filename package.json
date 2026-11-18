@@ -51,8 +51,8 @@
     "@magic/entities": "0.0.19",
     "@magic/log": "0.1.26",
     "@magic/types": "0.1.42",
-    "marked": "18.2.0",
-    "oxfmt": "0.78.0",
+    "marked": "18.2.1",
+    "oxfmt": "0.79.0",
     "posthtml-parser": "0.13.0"
   },
   "devDependencies": {
@@ -62,9 +62,9 @@
     "@magic-modules/pre": "0.0.12",
     "@magic-themes/docs": "0.0.15",
     "@magic/core": "0.0.161",
-    "@magic/format": "0.0.79",
-    "@magic/lint": "0.0.5",
-    "@magic/test": "0.3.57"
+    "@magic/format": "0.0.82",
+    "@magic/lint": "0.0.6",
+    "@magic/test": "0.3.59"
   },
   "engines": {
     "node": ">=14.15.4"
