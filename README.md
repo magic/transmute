@@ -363,5 +363,11 @@ update dependencies
 - add @magic/lint, add npm run tasks for tsc and lint, add oxlint.config and tsconfig files
 - update multiple dependencies
 
-[npm-image]: https://img.shields.io/npm/v/@magic/transmute.svg
+##### 0.0.61
+
+- sort imports
+- update dependencies
+
+
+[npm-image]: https://img.shields.io/npm/v/@magic/transmute.sv
 [npm-url]: https://www.npmjs.com/package/@magic/transmute
