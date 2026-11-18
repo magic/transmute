@@ -1,5 +1,4 @@
 import { html } from '../src/index.js'
-
 import { simpleSvg, fillStrokeTestSvg, complexSvg } from './.data/inputs.js'
 
 export default [

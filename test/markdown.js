@@ -1,5 +1,4 @@
 import { md } from '../src/index.js'
-
 import {
   h1,
   h1Long,

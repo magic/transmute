@@ -1,5 +1,4 @@
 import { html } from '../src/index.js'
-
 import {
   h1,
   h2,

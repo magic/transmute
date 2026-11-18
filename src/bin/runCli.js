@@ -1,11 +1,10 @@
-import path from 'path'
 import fs from 'fs'
-
-import { format } from 'oxfmt'
+import path from 'path'
 
 import log from '@magic/log'
 import is from '@magic/types'
 
+import { format } from 'oxfmt'
 import transmute from '../index.js'
 
 // oxfmt's format returns a promise, so the pretty path is async.

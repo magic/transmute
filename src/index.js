@@ -1,10 +1,8 @@
-import { marked } from 'marked'
-import { parser } from 'posthtml-parser'
-
 import is from '@magic/types'
 
+import { marked } from 'marked'
+import { parser } from 'posthtml-parser'
 import { findState, implantState } from './lib/index.js'
-
 import * as renderers from './renderers/index.js'
 
 /**
