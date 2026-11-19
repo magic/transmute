@@ -368,5 +368,9 @@ update dependencies
 - sort imports
 - update dependencies
 
+##### 0.0.62
+
+- markdown: escape html special characters in code and code span content. marked >= 5 no longer pre-escapes token text
+
 [npm-image]: https://img.shields.io/npm/v/@magic/transmute.sv
 [npm-url]: https://www.npmjs.com/package/@magic/transmute
