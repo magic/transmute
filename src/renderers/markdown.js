@@ -1,4 +1,5 @@
 import { Renderer } from 'marked'
+import { escapeHtml } from '../lib/index.js'
 
 export const markdown = new Renderer()
 
@@ -22,16 +23,17 @@ const slugify = str => {
 markdown.code = (/** @type {import('marked').Tokens.Code} */ token) => {
   const { text, lang } = token
   const language = (lang || '').match(/\S*/)?.[0]
+  const escaped = escapeHtml(text)
 
   if (!language) {
-    return `<Pre>${text}</Pre>\n`
+    return `<Pre>${escaped}</Pre>\n`
   }
 
-  return `<Pre class="${language}">${text}</Pre>`
+  return `<Pre class="${language}">${escaped}</Pre>`
 }
 
 markdown.codespan = (/** @type {import('marked').Tokens.Codespan} */ token) =>
-  `<Pre lines="false">${token.text}</Pre>`
+  `<Pre lines="false">${escapeHtml(token.text)}</Pre>`
 
 markdown.link = (/** @type {import('marked').Tokens.Link} */ token) => {
   const { href, title, text } = token
@@ -158,7 +160,7 @@ markdown.paragraph = (/** @type {import('marked').Tokens.Paragraph} */ token) =>
       return out + '/>\n'
     }
     if (t.type === 'codespan') {
-      return `<Pre lines="false">${t.text}</Pre>\n`
+      return `<Pre lines="false">${escapeHtml(t.text)}</Pre>\n`
     }
     // Single html token that starts with block-level tag
     if (t.type === 'html') {
@@ -210,7 +212,7 @@ markdown.paragraph = (/** @type {import('marked').Tokens.Paragraph} */ token) =>
           return `<${tag}>${inner}</${tag}>`
         }
         if (t.type === 'codespan') {
-          return `<Pre lines="false">${t.text}</Pre>`
+          return `<Pre lines="false">${escapeHtml(t.text)}</Pre>`
         }
         if (t.type === 'image') {
           let out = `<Img src="${t.href}"`

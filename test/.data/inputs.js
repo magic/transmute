@@ -56,6 +56,18 @@ export const codespan = {
   html: '<Pre lines="false">code block</Pre>',
 }
 
+export const codespanWithTags = {
+  md: '`<AboutMagic></AboutMagic>`',
+  magic: ["Pre({ lines: 'false' }, '<AboutMagic></AboutMagic>')"],
+  html: '<Pre lines="false">&lt;AboutMagic&gt;&lt;/AboutMagic&gt;</Pre>',
+}
+
+export const codeNoLangWithTags = {
+  md: '```\na < b & c\n```',
+  magic: ["Pre('a < b & c')"],
+  html: '<Pre>a &lt; b &amp; c</Pre>',
+}
+
 export const p = {
   md: 'paragraph',
   html: '<p>paragraph</p>',

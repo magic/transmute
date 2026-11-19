@@ -8,6 +8,8 @@ import {
   link,
   code,
   codeNoLang,
+  codeNoLangWithTags,
+  codespanWithTags,
   p,
   strong,
   italic,
@@ -34,6 +36,16 @@ export default [
     fn: html(codeNoLang.html).rendered,
     expect: codeNoLang.magic,
     info: 'can handle code blocks without language',
+  },
+  {
+    fn: html(codeNoLangWithTags.html).rendered,
+    expect: codeNoLangWithTags.magic,
+    info: 'can handle code blocks with escaped html',
+  },
+  {
+    fn: html(codespanWithTags.html).rendered,
+    expect: codespanWithTags.magic,
+    info: 'can handle code spans with escaped html',
   },
   {
     fn: html(p.html).rendered,

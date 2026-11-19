@@ -9,7 +9,9 @@ import {
   link,
   code,
   codeNoLang,
+  codeNoLangWithTags,
   codespan,
+  codespanWithTags,
   p,
   strong,
   italic,
@@ -48,6 +50,16 @@ export default [
     fn: md(codespan.md).rendered,
     expect: codespan.magic,
     info: 'can handle code spans',
+  },
+  {
+    fn: md(codespanWithTags.md).rendered,
+    expect: codespanWithTags.magic,
+    info: 'can handle code spans with html in them',
+  },
+  {
+    fn: md(codeNoLangWithTags.md).rendered,
+    expect: codeNoLangWithTags.magic,
+    info: 'can handle code blocks with html in them',
   },
   {
     fn: md(p.md).rendered,
