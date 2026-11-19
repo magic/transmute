@@ -61,16 +61,16 @@
     "@magic-modules/no-spy": "0.0.9",
     "@magic-modules/pre": "0.0.12",
     "@magic-themes/docs": "0.0.15",
-    "@magic/core": "0.0.161",
+    "@magic/core": "0.0.163",
     "@magic/format": "0.0.82",
     "@magic/lint": "0.0.6",
-    "@magic/test": "0.3.59"
+    "@magic/test": "0.3.60"
   },
   "engines": {
     "node": ">=14.15.4"
   },
   "engineStrict": true,
   "allowScripts": {
-    "@swc/core@1.15.47": true
+    "@swc/core@1.16.22": true
   }
 }
